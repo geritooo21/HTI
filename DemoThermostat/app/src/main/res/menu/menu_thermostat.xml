@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="nl.tue.demothermostat.ThermostatActivity">
+    <item
+        android:id="@+id/activityThermostat"
+        android:orderInCategory="100"
+        android:title="Activity Thermostat"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/weekOverview"
+        android:orderInCategory="100"
+        android:title="Week Overview"
+        app:showAsAction="never" />
+</menu>

@@ -1,0 +1,7 @@
+#Thu Jun 08 13:02:15 CEST 2017
+base.0=C\:\\Users\\s168239\\AndroidStudioProjects\\DemoThermostat\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_157583ffbdafab99497272a64141ef9a530e2aa9
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=C\:\\Users\\s168239\\AndroidStudioProjects\\DemoThermostat\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_d743688bb5f1c8a85e8ec10a4694317112984b60\\classes.dex
+base.1=C\:\\Users\\s168239\\AndroidStudioProjects\\DemoThermostat\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_d743688bb5f1c8a85e8ec10a4694317112984b60
+file.0=C\:\\Users\\s168239\\AndroidStudioProjects\\DemoThermostat\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_157583ffbdafab99497272a64141ef9a530e2aa9\\classes.dex

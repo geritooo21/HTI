@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\s168239\AndroidStudioProjects\DemoThermostat\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="caff8e51a24901cfc9cd7e1cf83d84f4cb0c103b">
+        <dex dex="C:\Users\s168239\AndroidStudioProjects\DemoThermostat\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_157583ffbdafab99497272a64141ef9a530e2aa9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\s168239\AndroidStudioProjects\DemoThermostat\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="fe0f6c4d225eb292ba3e19f88f4ab9aa319ec32a">
+        <dex dex="C:\Users\s168239\AndroidStudioProjects\DemoThermostat\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_d743688bb5f1c8a85e8ec10a4694317112984b60\classes.dex" />
+    </item>
+
+</items>
