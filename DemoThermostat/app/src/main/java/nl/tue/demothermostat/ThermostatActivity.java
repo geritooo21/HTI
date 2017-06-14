@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -28,8 +30,8 @@ public class ThermostatActivity extends AppCompatActivity {
 
         temp = (TextView) findViewById(R.id.temp);
 
-        Button bPlus = (Button) findViewById(R.id.bPlus);
-        Button bMinus = (Button) findViewById(R.id.bMinus);
+        ImageView bPlus = (ImageView) findViewById(R.id.bPlus);
+        ImageView bMinus = (ImageView) findViewById(R.id.bMinus);
         bPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -66,6 +68,9 @@ public class ThermostatActivity extends AppCompatActivity {
 
             }
         });
+
+        EditText dayTempText = (EditText)findViewById(R.id.dayTemp);
+
     }
 
     @Override

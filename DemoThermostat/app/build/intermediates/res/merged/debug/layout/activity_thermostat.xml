@@ -23,14 +23,13 @@
         android:layout_height="wrap_content"
         android:text="Current Temperature"
         android:textColor="#ffffff"
-        android:textSize="30dp"/>
-
-    <Button
-        android:id="@+id/bPlus"
-        style="@style/button"
-        android:layout_height="wrap_content"
-        android:text="+"
         android:textSize="30dp" />
+
+    <ImageView
+        android:id="@+id/bPlus"
+        android:layout_height="80dp"
+        android:layout_width="80dp"
+        android:src="@drawable/plus" />
 
     <TextView
         android:id="@+id/temp"
@@ -40,18 +39,49 @@
         android:textColor="#ffffff"
         android:textSize="30dp" />
 
-    <Button
+    <ImageView
         android:id="@+id/bMinus"
-        style="@style/button"
-        android:layout_height="wrap_content"
-        android:text="-"
-        android:textSize="30dp" />
+        android:layout_height="80dp"
+        android:layout_width="80dp"
+        android:src="@drawable/minus" />
 
     <SeekBar
         android:id="@+id/seekBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:max="30"
         android:layout_weight="0.04"
-        android:max="35" />
+        android:progressTint="#486F88"
+        android:thumbTint="#336699" />
+
+    <EditText android:id="@+id/dayTemp"
+        android:layout_weight="1"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:shadowColor="#336699"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:hint="Enter temperature"
+        android:digits="0123456789."
+        android:inputType="numberDecimal"/>
+
+    <CheckBox android:id="@+id/checkbox_meat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="affadsfa"
+        android:onClick="onCheckboxClicked"/>
+
+    <CheckBox android:id="@+id/checkbox_cheese"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="affadsfa"
+        android:onClick="onCheckboxClicked"/>
+
+    <Button
+        android:id="@+id/day1"
+        style="@style/button"
+        android:layout_height="wrap_content"
+        android:text="Day1"
+        android:textSize="30dp" />
 
 </LinearLayout>

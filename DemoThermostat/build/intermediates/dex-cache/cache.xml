@@ -2,22 +2,157 @@
 <items version="2" >
 
     <item
+        is-multidex="false"
+        jar="C:\Users\s168945\.android\build-cache\6f8a01d33649d1f0a5643baf6fdd1316febc334b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\build\intermediates\pre-dexed\debug\classes_bae61b1831b542357d45fa8999e523d8ee4e576b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\s168945\.android\build-cache\e805939aae7c90217ec933f8c62d5a377198a24f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\build\intermediates\pre-dexed\debug\classes_05a0a0813080fb919445235e2909326e289ff037.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\s168945\.android\build-cache\83c4d2ee4d246a5a3d1672f0a688126402f3ac9a\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\build\intermediates\pre-dexed\debug\classes_40ed89fc5b63677c47c12bcb4060a9f124af83b9.jar" />
+    </item>
+    <item
         is-multidex="true"
-        jar="C:\Users\s168239\AndroidStudioProjects\DemoThermostat\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="caff8e51a24901cfc9cd7e1cf83d84f4cb0c103b">
-        <dex dex="C:\Users\s168239\AndroidStudioProjects\DemoThermostat\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_157583ffbdafab99497272a64141ef9a530e2aa9\classes.dex" />
+        <dex dex="C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_caf797311d0015f8a88c4eadde58d3bd8b2980f1\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\s168945\.android\build-cache\0f17b7eb4fce3b426f6b7a84ce25295d03a4db9c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\build\intermediates\pre-dexed\debug\classes_39866b9f7f97554a16d4a59997681b91206a04f5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\s168945\.android\build-cache\fc09c9b9c3317b4607ef88ceff812f9fc31f4372\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\build\intermediates\pre-dexed\debug\classes_e592db2b41356a644d726cf30dff14f8450af817.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\s168945\.android\build-cache\0143472c247f288db4b0d41ad39a0c7be8af701e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\build\intermediates\pre-dexed\debug\classes_8573b666ed3f4a3b2798e9c7055a5984d264b073.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\s168945\.android\build-cache\68ea83c1d9016ee9930edb6a0555b844bd15fabc\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\build\intermediates\pre-dexed\debug\classes_4043aadf2f8c8a5bd3447753e027c1fb90235c5f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\s168945\.android\build-cache\3086e87bab67b47036f3b765454d4558770ca00f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\build\intermediates\pre-dexed\debug\classes_7d009fa86ff7ebe3bb85404a33bd836d5a8247e0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\s168945\.android\build-cache\ddaf9833168e0a404152acf388354e84151cb2d8\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\build\intermediates\pre-dexed\debug\classes_c21187d8938e016cb25eff670ea78a33355372a9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\s168945\.android\build-cache\25f516e8acc417646c8ac629c64dfb2ea29f3ec0\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\build\intermediates\pre-dexed\debug\classes_79808d86c0996cc2bf518ecc9336eea4448a6d11.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\s168945\.android\build-cache\705502bffda6909cde6791e3aaf078de67194beb\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\build\intermediates\pre-dexed\debug\classes_1945b6ef6f925f5135567003bb7efc8457b45626.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\s168945\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\build\intermediates\pre-dexed\debug\support-annotations-25.3.1_b3662a598b03b8ea4f705df9d5394050ef61939e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\s168945\.android\build-cache\3112f17a3eb61a8aa4022e22916c313fcde82cb3\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\build\intermediates\pre-dexed\debug\classes_e1b572ebbb9bd8c6fb53a81ba55831531432b587.jar" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\s168239\AndroidStudioProjects\DemoThermostat\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="fe0f6c4d225eb292ba3e19f88f4ab9aa319ec32a">
-        <dex dex="C:\Users\s168239\AndroidStudioProjects\DemoThermostat\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_d743688bb5f1c8a85e8ec10a4694317112984b60\classes.dex" />
+        sha1="68af8ead9b07e90b2694140181e4f36ad01f1734">
+        <dex dex="C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_7cb2c1d703b30fdd72d3e7a4d969d986e7a1a7d6\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\s168945\.android\build-cache\987ea7e110fd9a57d9453fdb7e78e92b937b9b17\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
+        <dex dex="C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\build\intermediates\pre-dexed\debug\classes_68f79a65ef293dbb9c9bd2c906aa503213739169.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\s168945\AppData\Local\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.0.2_e8b2eba9dff3115ee4fff63b5d748fbdeea2b530.jar" />
     </item>
 
 </items>
