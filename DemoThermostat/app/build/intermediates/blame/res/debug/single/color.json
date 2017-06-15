@@ -1,5 +1,13 @@
 [
     {
+        "merged": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_light.xml",
+        "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\color\\abc_primary_text_disable_only_material_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\color\\design_error.xml",
+        "source": "C:\\Users\\s168239\\.android\\build-cache\\a51330cb48925fb97599313b01ad2efd9f08ee40\\output\\res\\color\\design_error.xml"
+    },
+    {
         "merged": "C:\\Users\\s168239\\AndroidStudioProjects\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\color\\design_error.xml",
         "source": "C:\\Users\\s168239\\.android\\build-cache\\a51330cb48925fb97599313b01ad2efd9f08ee40\\output\\res\\color\\design_error.xml"
     },
@@ -20,16 +28,28 @@
         "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\color\\abc_secondary_text_material_light.xml"
     },
     {
-        "merged": "C:\\Users\\s168945\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_dark.xml",
-        "source": "C:\\Users\\s168945\\.android\\build-cache\\0143472c247f288db4b0d41ad39a0c7be8af701e\\output\\res\\color\\abc_secondary_text_material_dark.xml"
+        "merged": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_dark.xml",
+        "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\color\\switch_thumb_material_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\s168239\\AndroidStudioProjects\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_light.xml",
+        "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\color\\abc_primary_text_disable_only_material_light.xml"
     },
     {
         "merged": "C:\\Users\\s168239\\AndroidStudioProjects\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_dark.xml",
         "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\color\\switch_thumb_material_dark.xml"
     },
     {
-        "merged": "C:\\Users\\s168239\\AndroidStudioProjects\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_light.xml",
-        "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\color\\abc_primary_text_disable_only_material_light.xml"
+        "merged": "C:\\Users\\s168945\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_dark.xml",
+        "source": "C:\\Users\\s168945\\.android\\build-cache\\0143472c247f288db4b0d41ad39a0c7be8af701e\\output\\res\\color\\abc_secondary_text_material_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_search_url_text.xml",
+        "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\color\\abc_search_url_text.xml"
+    },
+    {
+        "merged": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_light.xml",
+        "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\color\\switch_thumb_material_light.xml"
     },
     {
         "merged": "C:\\Users\\s168945\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_search_url_text.xml",
@@ -46,6 +66,26 @@
     {
         "merged": "C:\\Users\\s168945\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_light.xml",
         "source": "C:\\Users\\s168945\\.android\\build-cache\\0143472c247f288db4b0d41ad39a0c7be8af701e\\output\\res\\color\\abc_hint_foreground_material_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_dark.xml",
+        "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\color\\abc_primary_text_material_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
+        "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\color\\abc_primary_text_material_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_dark.xml",
+        "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\color\\abc_hint_foreground_material_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_dark.xml",
+        "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_dark.xml",
+        "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\color\\abc_secondary_text_material_dark.xml"
     },
     {
         "merged": "C:\\Users\\s168239\\AndroidStudioProjects\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_light.xml",
@@ -66,6 +106,10 @@
     {
         "merged": "C:\\Users\\s168239\\AndroidStudioProjects\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
         "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\color\\abc_primary_text_material_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_hint_foreground_material_light.xml",
+        "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\color\\abc_hint_foreground_material_light.xml"
     },
     {
         "merged": "C:\\Users\\s168945\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_light.xml",
@@ -94,5 +138,9 @@
     {
         "merged": "C:\\Users\\s168945\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
         "source": "C:\\Users\\s168945\\.android\\build-cache\\0143472c247f288db4b0d41ad39a0c7be8af701e\\output\\res\\color\\abc_primary_text_material_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_light.xml",
+        "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\color\\abc_secondary_text_material_light.xml"
     }
 ]

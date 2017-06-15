@@ -1,111 +1,111 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:2:1-33:12
+ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:2:1-33:12
 	package
-		ADDED from C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:3:5-36
-		INJECTED from C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:3:5-36
+		INJECTED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:2:11-69
 	android:versionCode
-		INJECTED from C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:5:5-6:23
+ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:5:5-6:23
 	android:name
-		ADDED from C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:5:22-64
+		ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:5:22-64
 application
-ADDED from C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:8:5-31:19
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\s168945\.android\build-cache\fc09c9b9c3317b4607ef88ceff812f9fc31f4372\output\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support:design:25.3.1] C:\Users\s168945\.android\build-cache\68ea83c1d9016ee9930edb6a0555b844bd15fabc\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\s168945\.android\build-cache\0143472c247f288db4b0d41ad39a0c7be8af701e\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\s168945\.android\build-cache\e805939aae7c90217ec933f8c62d5a377198a24f\output\AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\s168945\.android\build-cache\3086e87bab67b47036f3b765454d4558770ca00f\output\AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:transition:25.3.1] C:\Users\s168945\.android\build-cache\987ea7e110fd9a57d9453fdb7e78e92b937b9b17\output\AndroidManifest.xml:26:5-20
-MERGED from [com.android.support:support-v4:25.3.1] C:\Users\s168945\.android\build-cache\0f17b7eb4fce3b426f6b7a84ce25295d03a4db9c\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\s168945\.android\build-cache\705502bffda6909cde6791e3aaf078de67194beb\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\s168945\.android\build-cache\25f516e8acc417646c8ac629c64dfb2ea29f3ec0\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\s168945\.android\build-cache\83c4d2ee4d246a5a3d1672f0a688126402f3ac9a\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\s168945\.android\build-cache\3112f17a3eb61a8aa4022e22916c313fcde82cb3\output\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-compat:25.3.1] C:\Users\s168945\.android\build-cache\6f8a01d33649d1f0a5643baf6fdd1316febc334b\output\AndroidManifest.xml:29:5-20
+ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:8:5-31:19
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\s168239\.android\build-cache\7b57f7b02029cb68905e6e14fc29c9ae4d10596e\output\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:design:25.3.1] C:\Users\s168239\.android\build-cache\a51330cb48925fb97599313b01ad2efd9f08ee40\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\s168239\.android\build-cache\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\s168239\.android\build-cache\8afca6c4f69a862c69b0064379498fdcdc54562b\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\s168239\.android\build-cache\54eef480b8e37958235783961d5a92bd6c5b1a78\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:transition:25.3.1] C:\Users\s168239\.android\build-cache\2ea1c0991e56e1370eae8f377bc977c1d07a80f2\output\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\s168239\.android\build-cache\f9845cfa56e354926ee3acaf68c0d7b006757e20\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\s168239\.android\build-cache\250f02b0b92062a9811615d3df1df95f44561c51\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\s168239\.android\build-cache\c5d4c559328eed7665137694e838d81c95eae0c0\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\s168239\.android\build-cache\ac28bacfdc80c929b638b1adb92c84f63f188730\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\s168239\.android\build-cache\03bacb13848c3234c07d689b04e887283849f611\output\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\s168239\.android\build-cache\afcda22c3d3f41de94c5923deacaa0439bb895b1\output\AndroidManifest.xml:29:5-20
 	android:label
-		ADDED from C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:11:9-43
+		ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:11:9-43
 	android:supportsRtl
-		ADDED from C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:13:9-35
+		ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:13:9-35
 	android:roundIcon
-		ADDED from C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:12:9-54
+		ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:12:9-54
 	android:allowBackup
-		ADDED from C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:9:9-35
+		ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:9:9-35
 	android:icon
-		ADDED from C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:10:9-43
+		ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:10:9-43
 	android:theme
-		ADDED from C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:14:9-40
+		ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:14:9-40
 activity#nl.tue.demothermostat.ThermostatActivity
-ADDED from C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:15:9-24:20
+ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:15:9-24:20
 	android:label
-		ADDED from C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:17:13-47
+		ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:17:13-47
 	android:theme
-		ADDED from C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:18:13-56
+		ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:18:13-56
 	android:name
-		ADDED from C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:16:13-47
+		ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:16:13-47
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:19:13-23:29
+ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:19:13-23:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:20:17-69
+ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:20:17-69
 	android:name
-		ADDED from C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:20:25-66
+		ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:20:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:22:17-77
+ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:22:17-77
 	android:name
-		ADDED from C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:22:27-74
+		ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:22:27-74
 activity#nl.tue.demothermostat.WeekOverview
-ADDED from C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:25:9-29:20
+ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:25:9-29:20
 	android:label
-		ADDED from C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:27:13-42
+		ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:27:13-42
 	android:theme
-		ADDED from C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:28:13-56
+		ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:28:13-56
 	android:name
-		ADDED from C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:26:13-41
+		ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:26:13-41
 uses-sdk
-INJECTED from C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\s168945\.android\build-cache\fc09c9b9c3317b4607ef88ceff812f9fc31f4372\output\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:design:25.3.1] C:\Users\s168945\.android\build-cache\68ea83c1d9016ee9930edb6a0555b844bd15fabc\output\AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\s168945\.android\build-cache\0143472c247f288db4b0d41ad39a0c7be8af701e\output\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\s168945\.android\build-cache\e805939aae7c90217ec933f8c62d5a377198a24f\output\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\s168945\.android\build-cache\3086e87bab67b47036f3b765454d4558770ca00f\output\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\s168945\.android\build-cache\ddaf9833168e0a404152acf388354e84151cb2d8\output\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:transition:25.3.1] C:\Users\s168945\.android\build-cache\987ea7e110fd9a57d9453fdb7e78e92b937b9b17\output\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:25.3.1] C:\Users\s168945\.android\build-cache\0f17b7eb4fce3b426f6b7a84ce25295d03a4db9c\output\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\s168945\.android\build-cache\705502bffda6909cde6791e3aaf078de67194beb\output\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\s168945\.android\build-cache\25f516e8acc417646c8ac629c64dfb2ea29f3ec0\output\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\s168945\.android\build-cache\83c4d2ee4d246a5a3d1672f0a688126402f3ac9a\output\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\s168945\.android\build-cache\3112f17a3eb61a8aa4022e22916c313fcde82cb3\output\AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-compat:25.3.1] C:\Users\s168945\.android\build-cache\6f8a01d33649d1f0a5643baf6fdd1316febc334b\output\AndroidManifest.xml:21:5-23:58
+INJECTED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\s168239\.android\build-cache\7b57f7b02029cb68905e6e14fc29c9ae4d10596e\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:design:25.3.1] C:\Users\s168239\.android\build-cache\a51330cb48925fb97599313b01ad2efd9f08ee40\output\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\s168239\.android\build-cache\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\s168239\.android\build-cache\8afca6c4f69a862c69b0064379498fdcdc54562b\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\s168239\.android\build-cache\54eef480b8e37958235783961d5a92bd6c5b1a78\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\s168239\.android\build-cache\2259cd0526de974d7c2c66cd6d09f9deddc8836a\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:transition:25.3.1] C:\Users\s168239\.android\build-cache\2ea1c0991e56e1370eae8f377bc977c1d07a80f2\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\s168239\.android\build-cache\f9845cfa56e354926ee3acaf68c0d7b006757e20\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\s168239\.android\build-cache\250f02b0b92062a9811615d3df1df95f44561c51\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\s168239\.android\build-cache\c5d4c559328eed7665137694e838d81c95eae0c0\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\s168239\.android\build-cache\ac28bacfdc80c929b638b1adb92c84f63f188730\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\s168239\.android\build-cache\03bacb13848c3234c07d689b04e887283849f611\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\s168239\.android\build-cache\afcda22c3d3f41de94c5923deacaa0439bb895b1\output\AndroidManifest.xml:21:5-23:58
 	tools:overrideLibrary
-		ADDED from [com.android.support:design:25.3.1] C:\Users\s168945\.android\build-cache\68ea83c1d9016ee9930edb6a0555b844bd15fabc\output\AndroidManifest.xml:23:9-59
+		ADDED from [com.android.support:design:25.3.1] C:\Users\s168239\.android\build-cache\a51330cb48925fb97599313b01ad2efd9f08ee40\output\AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
-		INJECTED from C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\s168945\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml
 meta-data#android.support.VERSION
-ADDED from [com.android.support:design:25.3.1] C:\Users\s168945\.android\build-cache\68ea83c1d9016ee9930edb6a0555b844bd15fabc\output\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\s168945\.android\build-cache\0143472c247f288db4b0d41ad39a0c7be8af701e\output\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\s168945\.android\build-cache\e805939aae7c90217ec933f8c62d5a377198a24f\output\AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\s168945\.android\build-cache\3086e87bab67b47036f3b765454d4558770ca00f\output\AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\s168945\.android\build-cache\ddaf9833168e0a404152acf388354e84151cb2d8\output\AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:transition:25.3.1] C:\Users\s168945\.android\build-cache\987ea7e110fd9a57d9453fdb7e78e92b937b9b17\output\AndroidManifest.xml:22:5-24:34
-MERGED from [com.android.support:support-v4:25.3.1] C:\Users\s168945\.android\build-cache\0f17b7eb4fce3b426f6b7a84ce25295d03a4db9c\output\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\s168945\.android\build-cache\705502bffda6909cde6791e3aaf078de67194beb\output\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\s168945\.android\build-cache\25f516e8acc417646c8ac629c64dfb2ea29f3ec0\output\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\s168945\.android\build-cache\83c4d2ee4d246a5a3d1672f0a688126402f3ac9a\output\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\s168945\.android\build-cache\3112f17a3eb61a8aa4022e22916c313fcde82cb3\output\AndroidManifest.xml:25:5-27:34
-MERGED from [com.android.support:support-compat:25.3.1] C:\Users\s168945\.android\build-cache\6f8a01d33649d1f0a5643baf6fdd1316febc334b\output\AndroidManifest.xml:25:5-27:34
+ADDED from [com.android.support:design:25.3.1] C:\Users\s168239\.android\build-cache\a51330cb48925fb97599313b01ad2efd9f08ee40\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\s168239\.android\build-cache\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:animated-vector-drawable:25.3.1] C:\Users\s168239\.android\build-cache\8afca6c4f69a862c69b0064379498fdcdc54562b\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-vector-drawable:25.3.1] C:\Users\s168239\.android\build-cache\54eef480b8e37958235783961d5a92bd6c5b1a78\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:recyclerview-v7:25.3.1] C:\Users\s168239\.android\build-cache\2259cd0526de974d7c2c66cd6d09f9deddc8836a\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:transition:25.3.1] C:\Users\s168239\.android\build-cache\2ea1c0991e56e1370eae8f377bc977c1d07a80f2\output\AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:support-v4:25.3.1] C:\Users\s168239\.android\build-cache\f9845cfa56e354926ee3acaf68c0d7b006757e20\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-fragment:25.3.1] C:\Users\s168239\.android\build-cache\250f02b0b92062a9811615d3df1df95f44561c51\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-media-compat:25.3.1] C:\Users\s168239\.android\build-cache\c5d4c559328eed7665137694e838d81c95eae0c0\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-ui:25.3.1] C:\Users\s168239\.android\build-cache\ac28bacfdc80c929b638b1adb92c84f63f188730\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-core-utils:25.3.1] C:\Users\s168239\.android\build-cache\03bacb13848c3234c07d689b04e887283849f611\output\AndroidManifest.xml:25:5-27:34
+MERGED from [com.android.support:support-compat:25.3.1] C:\Users\s168239\.android\build-cache\afcda22c3d3f41de94c5923deacaa0439bb895b1\output\AndroidManifest.xml:25:5-27:34
 	android:value
-		ADDED from [com.android.support:design:25.3.1] C:\Users\s168945\.android\build-cache\68ea83c1d9016ee9930edb6a0555b844bd15fabc\output\AndroidManifest.xml:27:9-31
+		ADDED from [com.android.support:design:25.3.1] C:\Users\s168239\.android\build-cache\a51330cb48925fb97599313b01ad2efd9f08ee40\output\AndroidManifest.xml:27:9-31
 	android:name
-		ADDED from [com.android.support:design:25.3.1] C:\Users\s168945\.android\build-cache\68ea83c1d9016ee9930edb6a0555b844bd15fabc\output\AndroidManifest.xml:26:9-47
+		ADDED from [com.android.support:design:25.3.1] C:\Users\s168239\.android\build-cache\a51330cb48925fb97599313b01ad2efd9f08ee40\output\AndroidManifest.xml:26:9-47

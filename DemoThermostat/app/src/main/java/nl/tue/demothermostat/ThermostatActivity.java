@@ -20,10 +20,11 @@ import org.thermostatapp.util.HeatingSystem;
 public class ThermostatActivity extends AppCompatActivity {
 
     int vTemp = 21;
-    TextView temp;
+    TextView temp, dayTemp;
     SeekBar seekBar;
     Button getDayTemp;
     String dayTempString;
+    EditText nightTempText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,8 +75,8 @@ public class ThermostatActivity extends AppCompatActivity {
             }
         });
 
-        TextView dayTemp = (TextView)findViewById(R.id.dayTemp);
-        EditText nightTempText = (EditText)findViewById(R.id.nightTemp);
+        dayTemp = (TextView)findViewById(R.id.dayTemp);
+        nightTempText = (EditText)findViewById(R.id.nightTemp);
 
         getDayTemp.setOnClickListener(new View.OnClickListener() {
 
