@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Wed Jun 14 16:42:48 CEST 2017
+#Wed Jun 14 18:49:16 CEST 2017
 210.set=ANDROID_RESOURCE
 14.set=ANDROID_RESOURCE
 180.file=C\:\\Users\\s168945\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\abc_screen_toolbar.xml

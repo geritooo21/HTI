@@ -54,34 +54,32 @@
         android:progressTint="#486F88"
         android:thumbTint="#336699" />
 
-    <EditText android:id="@+id/dayTemp"
-        android:layout_weight="1"
-        android:layout_width="100dp"
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView android:id="@+id/dayTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:shadowColor="#336699"
+        android:textColor="#FFFFFF"/>
+
+    <EditText android:id="@+id/nightTemp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:shadowColor="#336699"
         android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:hint="Enter temperature"
         android:digits="0123456789."
         android:inputType="numberDecimal"/>
 
-    <CheckBox android:id="@+id/checkbox_meat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="affadsfa"
-        android:onClick="onCheckboxClicked"/>
+        <Button
+            android:id="@+id/getDayTemp"
+            style="@style/button"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Get Data"
+            android:textSize="30dp" />
 
-    <CheckBox android:id="@+id/checkbox_cheese"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="affadsfa"
-        android:onClick="onCheckboxClicked"/>
-
-    <Button
-        android:id="@+id/day1"
-        style="@style/button"
-        android:layout_height="wrap_content"
-        android:text="Day1"
-        android:textSize="30dp" />
+    </GridLayout>
 
 </LinearLayout>

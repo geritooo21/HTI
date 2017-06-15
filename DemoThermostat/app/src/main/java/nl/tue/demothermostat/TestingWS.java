@@ -15,7 +15,7 @@ import org.thermostatapp.util.*;
 public class TestingWS extends AppCompatActivity {
     Button getdata, putdata;
     TextView data1, data2, data3;
-    String getParam, oldv, newv;
+    String getParam, oldv, newv, dayTemperature;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +41,7 @@ public class TestingWS extends AppCompatActivity {
                     public void run() {
                         getParam = "";
                         try {
-                            getParam = HeatingSystem.get("time");
+                            getParam = HeatingSystem.get("dayTemperature");
                             /*
 									HeatingSystem.get("day");
 									HeatingSystem.get("time");

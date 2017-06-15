@@ -15,11 +15,15 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import org.thermostatapp.util.HeatingSystem;
+
 public class ThermostatActivity extends AppCompatActivity {
 
     int vTemp = 21;
     TextView temp;
     SeekBar seekBar;
+    Button getDayTemp;
+    String dayTempString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +32,7 @@ public class ThermostatActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        getDayTemp =(Button)findViewById(R.id.getDayTemp);
         temp = (TextView) findViewById(R.id.temp);
 
         ImageView bPlus = (ImageView) findViewById(R.id.bPlus);
@@ -69,7 +74,42 @@ public class ThermostatActivity extends AppCompatActivity {
             }
         });
 
-        EditText dayTempText = (EditText)findViewById(R.id.dayTemp);
+        TextView dayTemp = (TextView)findViewById(R.id.dayTemp);
+        EditText nightTempText = (EditText)findViewById(R.id.nightTemp);
+
+        getDayTemp.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                // TODO Auto-generated method stub
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        dayTempString = "";
+                        try {
+                            dayTempString = HeatingSystem.get("dayTemperature");
+                            /*
+									HeatingSystem.get("day");
+									HeatingSystem.get("time");
+									HeatingSystem.get("targetTemperature");
+									HeatingSystem.get("dayTemperature");
+									HeatingSystem.get("nightTemperature");
+									HeatingSystem.get("weekProgramState");
+							*/
+                            dayTemp.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    dayTemp.setText(dayTempString);
+                                }
+                            });
+                        } catch (Exception e) {
+                            System.err.println("Error from getdata " + e);
+                        }
+                    }
+                }).start();
+            }
+        });
+
 
     }
 
