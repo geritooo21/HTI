@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">DemoThermostat</string>
     <string name="action_settings">Settings</string>
+    <string name="cancel">Cancelled</string>
+    <string name="add">Added</string>
+    <string name="reset">Reset</string>
+    <string name="delete">Deleted</string>
+    <string name="edit">Changed</string>
+    <string name="full">Max amount of switches reached</string>
 </resources>

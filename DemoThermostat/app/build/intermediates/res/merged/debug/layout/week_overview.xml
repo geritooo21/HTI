@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/week_overview"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,60 +10,47 @@
     android:weightSum="1"
     android:background="#000000" >
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme" />
+        <Button
+            android:id="@+id/day0"
+            android:text="Monday"
+            style="@style/weekButton" />
+        <Button
+            android:id="@+id/day1"
+            android:text="Tuesday"
+            style="@style/weekButton" />
+        <Button
+            android:id="@+id/day2"
+            android:text="Wednesday"
+            style="@style/weekButton" />
+        <Button
+            android:id="@+id/day3"
+            android:text="Thursday"
+            style="@style/weekButton" />
+        <Button
+            android:id="@+id/day4"
+            android:text="Friday"
+            style="@style/weekButton" />
+        <Button
+            android:id="@+id/day5"
+            android:text="Saturday"
+            style="@style/weekButton" />
+        <Button
+            android:id="@+id/day6"
+            android:text="Sunday"
+            style="@style/weekButton" />
 
-    <Button
-        android:id="@+id/day1"
-        style="@style/button"
-        android:layout_height="wrap_content"
-        android:text="Day1"
-        android:textSize="30dp" />
-    <Button
-        android:id="@+id/day2"
-        style="@style/button"
-        android:layout_height="wrap_content"
-        android:text="Day2"
-        android:textSize="30dp" />
-    <Button
-        android:id="@+id/day3"
-        style="@style/button"
-        android:layout_height="wrap_content"
-        android:text="Day3"
-        android:textSize="30dp" />
+        <RelativeLayout
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true">
 
-    <Button
-        android:id="@+id/day4"
-        style="@style/button"
-        android:layout_height="wrap_content"
-        android:text="Day4"
-        android:textSize="30dp" />
-
-    <Button
-        android:id="@+id/day5"
-        style="@style/button"
-        android:layout_height="wrap_content"
-        android:text="Day5"
-        android:textSize="30dp" />
-
-    <Button
-        android:id="@+id/day6"
-        style="@style/button"
-        android:layout_height="wrap_content"
-        android:text="Day6"
-        android:textSize="30dp" />
-
-    <Button
-        android:id="@+id/day7"
-        style="@style/button"
-        android:layout_height="wrap_content"
-        android:text="Day7"
-        android:textSize="30dp" />
-
-
+                <ImageView
+                    android:id="@+id/reset"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/reset"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentEnd="true" />
+        </RelativeLayout>
 </LinearLayout>

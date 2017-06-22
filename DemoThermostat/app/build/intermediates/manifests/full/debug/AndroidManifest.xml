@@ -38,6 +38,11 @@
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
+            android:name="nl.tue.demothermostat.DayOverview"
+            android:label="Monday"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
             android:name="nl.tue.demothermostat.SetDayNight"
             android:label="Day/Night temperature"
             android:theme="@style/AppTheme.NoActionBar" >

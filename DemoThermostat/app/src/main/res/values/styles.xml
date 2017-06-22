@@ -19,7 +19,7 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="button">
-        <item name="android:background"> #336699 </item>
+        <item name="android:background"> #000fff </item>
         <item name="android:textColor"> #ffffff </item>
         <item name="android:layout_width"> 70dp </item>
     </style>
@@ -36,6 +36,61 @@
         <!-- inactive track color (30% transparency) -->
         <item name="android:colorForeground">#42221f1f
         </item>
+    </style>
+
+    <style name="weekButton">
+        <item name="android:background"> #255c69 </item>
+        <item name="android:textColor"> #ffffff </item>
+        <item name="android:layout_width"> match_parent </item>
+        <item name="android:layout_height"> wrap_content </item>
+        <item name="android:textSize"> 30dp </item>
+        <item name="android:layout_marginTop"> 10dp </item>
+        <item name="android:layout_marginLeft"> 10dp </item>
+        <item name="android:layout_marginRight"> 10dp </item>
+    </style>
+
+    <style name="weekSwitch">
+        <item name="android:background"> #255c69 </item>
+        <item name="android:layout_width"> match_parent </item>
+        <item name="android:layout_height"> wrap_content </item>
+        <item name="android:orientation"> horizontal </item>
+        <item name="android:gravity"> center </item>
+        <item name="android:layout_marginTop"> 10dp </item>
+        <item name="android:layout_marginLeft"> 10dp </item>
+        <item name="android:layout_marginRight"> 10dp </item>
+    </style>
+
+    <style name="iconSwitch">
+        <item name="android:layout_width"> 30dp </item>
+        <item name="android:layout_height"> 30dp </item>
+        <item name="android:layout_margin"> 5dp </item>
+    </style>
+
+    <style name="timeSwitch">
+        <item name="android:layout_width"> wrap_content </item>
+        <item name="android:layout_height"> wrap_content </item>
+        <item name="android:layout_weight"> 1 </item>
+        <item name="android:textColor"> #ffffff </item>
+        <item name="android:textSize"> 30dp </item>
+    </style>
+
+    <style name="editSwitch">
+        <item name="android:layout_width"> 30dp </item>
+        <item name="android:layout_height"> 30dp </item>
+        <item name="android:layout_margin"> 5dp </item>
+        <item name="android:src"> @drawable/edit </item>
+    </style>
+
+    <style name="deleteSwitch">
+        <item name="android:layout_width"> 30dp </item>
+        <item name="android:layout_height"> 30dp </item>
+        <item name="android:layout_margin"> 5dp </item>
+        <item name="android:src"> @drawable/delete </item>
+    </style>
+
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent"> #af762b </item>
+        <item name="colorControlNormal"> #666666 </item>
     </style>
 
 </resources>

@@ -2,46 +2,106 @@ package nl.tue.demothermostat;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.app.Activity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.Toast;
+
+import org.thermostatapp.util.HeatingSystem;
+import org.thermostatapp.util.WeekProgram;
 
 public class WeekOverview extends AppCompatActivity {
+
+    private Button[] day = new Button[7];
+    private ImageView reset;
+    private LinearLayout activityLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.week_overview);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar2);
-        setSupportActionBar(toolbar);
-    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_thermostat, menu);
-        return true;
-    }
+        activityLayout = (LinearLayout) findViewById(R.id.week_overview);
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        HeatingSystem.BASE_ADDRESS = "http://wwwis.win.tue.nl/2id40-ws/50";
+        HeatingSystem.WEEK_PROGRAM_ADDRESS = HeatingSystem.BASE_ADDRESS + "/weekProgram";
 
-        //noinspection SimplifiableIfStatement
-        switch (item.getItemId()) {
-            case R.id.activityThermostat:
-                Intent intent = new Intent(this, ThermostatActivity.class);
-                startActivity(intent);
-                break;
-            case R.id.weekOverview:
-                return true;
+        for (int i = 0; i < day.length; i++) {
+            String ID = "day" + i;
+            int resID = getResources().getIdentifier(ID, "id", getPackageName());
+            day[i] = (Button) findViewById(resID);
         }
 
-        return super.onOptionsItemSelected(item);
-    }
+        for (int i = 0; i < day.length; i++) {
+            final int j = i;
+            day[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent startDayOverview = new Intent(view.getContext(), DayOverview.class);
+                    DayOverview.dayNumber = j;
+                    startActivity(startDayOverview);
+                }
+            });
+        }
 
+        reset = (ImageView) findViewById(R.id.reset);
+        reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                AlertDialog.Builder menuBuilder = new AlertDialog.Builder(WeekOverview.this);
+                View menuView = getLayoutInflater().inflate(R.layout.reset, null);
+
+                final Button cancel = (Button) menuView.findViewById(R.id.cancel);
+                final Button reset = (Button) menuView.findViewById(R.id.reset);
+
+                menuBuilder.setView(menuView);
+                final AlertDialog dialog = menuBuilder.create();
+                dialog.show();
+
+                cancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Toast.makeText(WeekOverview.this, R.string.cancel, Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
+                    }
+                });
+
+                reset.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        new Thread(new Runnable() {
+                            @Override
+                            public void run() {
+                                try {
+                                    WeekProgram wpg = HeatingSystem.getWeekProgram();
+                                    wpg.setDefault();
+                                    HeatingSystem.setWeekProgram(wpg);
+
+                                    activityLayout.post(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            Toast.makeText(WeekOverview.this, R.string.reset, Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+                                } catch (Exception e) {
+                                    activityLayout.post(new Runnable() {
+                                        @Override
+                                        public void run() {
+                                            Toast.makeText(WeekOverview.this, R.string.cancel, Toast.LENGTH_SHORT).show();
+                                        }
+                                    });
+                                }
+                            }
+                        }).start();
+
+                        dialog.dismiss();
+                    }
+                });
+            }
+        });
+    }
 }

@@ -27,7 +27,11 @@
             android:label="Week Overview"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
-
+        <activity
+            android:name=".DayOverview"
+            android:label="Monday"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
         <activity
             android:name=".SetDayNight"
             android:label="Day/Night temperature"
