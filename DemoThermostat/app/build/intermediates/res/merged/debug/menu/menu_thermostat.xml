@@ -5,11 +5,17 @@
     <item
         android:id="@+id/activityThermostat"
         android:orderInCategory="100"
-        android:title="Activity Thermostat"
+        android:title="Thermostat activity"
         app:showAsAction="never" />
     <item
         android:id="@+id/weekOverview"
         android:orderInCategory="100"
         android:title="Week Overview"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/setDayNight"
+        android:orderInCategory="100"
+        android:title="Day/Night temperature"
         app:showAsAction="never" />
 </menu>

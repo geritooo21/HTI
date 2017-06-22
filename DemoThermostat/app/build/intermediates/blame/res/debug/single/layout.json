@@ -208,6 +208,10 @@
         "source": "C:\\Users\\s168239\\.android\\build-cache\\a51330cb48925fb97599313b01ad2efd9f08ee40\\output\\res\\layout\\design_layout_snackbar_include.xml"
     },
     {
+        "merged": "C:\\Users\\s168945\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\layout\\daynight_set.xml",
+        "source": "C:\\Users\\s168945\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\src\\main\\res\\layout\\daynight_set.xml"
+    },
+    {
         "merged": "C:\\Users\\s168239\\AndroidStudioProjects\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
         "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\layout\\abc_action_mode_bar.xml"
     },

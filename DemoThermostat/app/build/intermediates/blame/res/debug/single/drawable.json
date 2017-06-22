@@ -68,6 +68,10 @@
         "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\drawable\\abc_spinner_textfield_background_material.xml"
     },
     {
+        "merged": "C:\\Users\\s168945\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\kryg_outline.png",
+        "source": "C:\\Users\\s168945\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\src\\main\\res\\drawable\\kryg_outline.png"
+    },
+    {
         "merged": "C:\\Users\\s168239\\AndroidStudioProjects\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",
         "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\drawable\\abc_btn_borderless_material.xml"
     },
@@ -150,6 +154,10 @@
     {
         "merged": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_clear_material.xml",
         "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\drawable\\abc_ic_clear_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\s168945\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home_icon.png",
+        "source": "C:\\Users\\s168945\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\src\\main\\res\\drawable\\home_icon.png"
     },
     {
         "merged": "C:\\Users\\s168239\\AndroidStudioProjects\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_search_api_material.xml",
@@ -280,6 +288,10 @@
         "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\drawable\\abc_seekbar_tick_mark_material.xml"
     },
     {
+        "merged": "C:\\Users\\s168945\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\home.png",
+        "source": "C:\\Users\\s168945\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\src\\main\\res\\drawable\\home.png"
+    },
+    {
         "merged": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background.xml",
         "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\drawable\\abc_dialog_material_background.xml"
     },
@@ -380,6 +392,10 @@
         "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\drawable\\abc_ratingbar_small_material.xml"
     },
     {
+        "merged": "C:\\Users\\s168945\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\moon.png",
+        "source": "C:\\Users\\s168945\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\src\\main\\res\\drawable\\moon.png"
+    },
+    {
         "merged": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_snackbar_background.xml",
         "source": "C:\\Users\\s168239\\.android\\build-cache\\a51330cb48925fb97599313b01ad2efd9f08ee40\\output\\res\\drawable\\design_snackbar_background.xml"
     },
@@ -422,6 +438,10 @@
     {
         "merged": "C:\\Users\\s168239\\AndroidStudioProjects\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_indicator_material.xml",
         "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\drawable\\abc_ratingbar_indicator_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\s168945\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\homeicon.png",
+        "source": "C:\\Users\\s168945\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\src\\main\\res\\drawable\\homeicon.png"
     },
     {
         "merged": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_search_api_material.xml",
@@ -478,6 +498,10 @@
     {
         "merged": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_track_material.xml",
         "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\drawable\\abc_seekbar_track_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\s168945\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\sun.png",
+        "source": "C:\\Users\\s168945\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\src\\main\\res\\drawable\\sun.png"
     },
     {
         "merged": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_tile_bg.xml",

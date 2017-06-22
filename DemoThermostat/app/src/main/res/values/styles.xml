@@ -1,4 +1,5 @@
 <resources>
+    values/themes.xml:
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -18,9 +19,23 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="button">
-        <item name="android:background"> #000fff </item>
+        <item name="android:background"> #336699 </item>
         <item name="android:textColor"> #ffffff </item>
         <item name="android:layout_width"> 70dp </item>
+    </style>
+
+
+    <style name="Switch" parent="Theme.AppCompat.Light">
+        <!-- active thumb & track color (30% transparency) -->
+        <item name="colorControlActivated">#0D4D4D</item>
+
+        <!-- inactive thumb color -->
+        <item name="colorSwitchThumbNormal">#f1f1f1
+        </item>
+
+        <!-- inactive track color (30% transparency) -->
+        <item name="android:colorForeground">#42221f1f
+        </item>
     </style>
 
 </resources>

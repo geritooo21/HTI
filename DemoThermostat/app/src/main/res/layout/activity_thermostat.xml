@@ -1,85 +1,150 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:gravity="center_horizontal"
     tools:context="nl.tue.demothermostat.ThermostatActivity"
     android:weightSum="1"
-    android:background="#000000" >
+    android:background="#407F7F">
 
 <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
+        android:background="#226666"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme" />
 
-    <TextView
-        android:id="@+id/text1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Current Temperature"
-        android:textColor="#ffffff"
-        android:textSize="30dp" />
-
-    <ImageView
-        android:id="@+id/bPlus"
-        android:layout_height="80dp"
-        android:layout_width="80dp"
-        android:src="@drawable/plus" />
-
-    <TextView
-        android:id="@+id/temp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="21 &#x2103;"
-        android:textColor="#ffffff"
-        android:textSize="30dp" />
-
-    <ImageView
-        android:id="@+id/bMinus"
-        android:layout_height="80dp"
-        android:layout_width="80dp"
-        android:src="@drawable/minus" />
-
-    <SeekBar
-        android:id="@+id/seekBar"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:max="30"
-        android:layout_weight="0.04"
-        android:progressTint="#486F88"
-        android:thumbTint="#336699" />
+        android:background="#407F7F"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:weightSum="1"
+        tools:context="nl.tue.demothermostat.ThermostatActivity">
 
-    <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        <RelativeLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
 
-    <TextView android:id="@+id/dayTemp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:shadowColor="#336699"
-        android:textColor="#FFFFFF"/>
+            <ImageView
+                android:id="@+id/circle"
+                android:layout_centerHorizontal="true"
+                app:srcCompat="@drawable/kryg_outline"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+            />
 
-    <EditText android:id="@+id/nightTemp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:shadowColor="#336699"
-        android:textColor="#FFFFFF"
-        android:digits="0123456789."
-        android:inputType="numberDecimal"/>
+            <LinearLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignLeft="@id/circle"
+                android:layout_alignRight="@id/circle"
+                android:layout_alignTop="@id/circle"
+                android:layout_alignBottom="@id/circle"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/currTemp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="45dp"
+                    android:layout_gravity="center"
+                    android:textColor="#F3F3F3"
+                    android:textSize="40dp" />
 
-        <Button
-            android:id="@+id/getDayTemp"
-            style="@style/button"
+            <TextView
+                android:id="@+id/day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="#F3F3F3"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_gravity="center"
+                android:textColor="#F3F3F3"
+                android:textSize="30dp" />
+
+
+            </LinearLayout>
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="Get Data"
-            android:textSize="30dp" />
+            android:background="#407F7F"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:weightSum="1"
+            tools:context="nl.tue.demothermostat.ThermostatActivity">
 
-    </GridLayout>
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Target Temperature"
+                android:textColor="#F3F3F3"
+                android:textSize="20dp" />
+
+            <ImageView
+                android:id="@+id/bPlus"
+                android:layout_marginTop="10dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/plus" />
+
+            <TextView
+                android:id="@+id/targetTemp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#F3F3F3"
+                android:textSize="40dp" />
+
+            <ImageView
+                android:id="@+id/bMinus"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/minus" />
+
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.04"
+                android:max="300"
+                android:progressTint="#F3F3F3"
+                android:thumbTint="#F3F3F3" />
+
+            <Switch
+                android:id="@+id/vacMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#F3F3F3"
+                android:shadowColor="#ffffff"
+                android:layout_marginTop="15dp"
+                android:text="Vacation mode"
+                android:theme="@style/Switch"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
 
 </LinearLayout>

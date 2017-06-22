@@ -37,6 +37,11 @@
             android:label="Week Overview"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity
+            android:name="nl.tue.demothermostat.SetDayNight"
+            android:label="Day/Night temperature"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
 
 </manifest>
