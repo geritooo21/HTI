@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+        "outputFile": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -1396,7 +1396,7 @@
                     "endOffset": 6275
                 },
                 "from": {
-                    "file": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\src\\main\\res\\values\\colors.xml",
+                    "file": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\src\\main\\res\\values\\colors.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -1415,7 +1415,7 @@
                     "endOffset": 6322
                 },
                 "from": {
-                    "file": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\src\\main\\res\\values\\colors.xml",
+                    "file": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\src\\main\\res\\values\\colors.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -1434,7 +1434,7 @@
                     "endOffset": 6373
                 },
                 "from": {
-                    "file": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\src\\main\\res\\values\\colors.xml",
+                    "file": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\src\\main\\res\\values\\colors.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -4607,7 +4607,7 @@
                     "endOffset": 53132
                 },
                 "from": {
-                    "file": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\src\\main\\res\\values\\dimens.xml",
+                    "file": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\src\\main\\res\\values\\dimens.xml",
                     "position": {
                         "startLine": 1,
                         "startColumn": 4,
@@ -6184,7 +6184,7 @@
                     "endOffset": 58678
                 },
                 "from": {
-                    "file": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -6203,7 +6203,7 @@
                     "endOffset": 58716
                 },
                 "from": {
-                    "file": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -6222,7 +6222,7 @@
                     "endOffset": 58768
                 },
                 "from": {
-                    "file": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 1,
                         "startColumn": 4,
@@ -6279,7 +6279,7 @@
                     "endOffset": 59079
                 },
                 "from": {
-                    "file": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -6317,7 +6317,7 @@
                     "endOffset": 59209
                 },
                 "from": {
-                    "file": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -6336,7 +6336,7 @@
                     "endOffset": 59250
                 },
                 "from": {
-                    "file": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -6355,7 +6355,7 @@
                     "endOffset": 59314
                 },
                 "from": {
-                    "file": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -6469,7 +6469,7 @@
                     "endOffset": 60169
                 },
                 "from": {
-                    "file": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -6624,7 +6624,7 @@
                     "endOffset": 61251
                 },
                 "from": {
-                    "file": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\src\\main\\res\\values\\styles.xml",
+                    "file": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\src\\main\\res\\values\\styles.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -6644,7 +6644,7 @@
                     "endOffset": 61341
                 },
                 "from": {
-                    "file": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\src\\main\\res\\values\\styles.xml",
+                    "file": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\src\\main\\res\\values\\styles.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
@@ -6664,7 +6664,7 @@
                     "endOffset": 61491
                 },
                 "from": {
-                    "file": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\src\\main\\res\\values\\styles.xml",
+                    "file": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\src\\main\\res\\values\\styles.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -6684,7 +6684,7 @@
                     "endOffset": 61571
                 },
                 "from": {
-                    "file": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\src\\main\\res\\values\\styles.xml",
+                    "file": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\src\\main\\res\\values\\styles.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
@@ -9568,7 +9568,7 @@
                     "endOffset": 126969
                 },
                 "from": {
-                    "file": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\src\\main\\res\\values\\styles.xml",
+                    "file": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\src\\main\\res\\values\\styles.xml",
                     "position": {
                         "startLine": 90,
                         "startColumn": 4,
@@ -10005,7 +10005,7 @@
                     "endOffset": 138060
                 },
                 "from": {
-                    "file": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\src\\main\\res\\values\\styles.xml",
+                    "file": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\src\\main\\res\\values\\styles.xml",
                     "position": {
                         "startLine": 27,
                         "startColumn": 4,
@@ -13781,7 +13781,7 @@
                     "endOffset": 163016
                 },
                 "from": {
-                    "file": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\src\\main\\res\\values\\styles.xml",
+                    "file": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\src\\main\\res\\values\\styles.xml",
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,
@@ -13802,7 +13802,7 @@
                     "endOffset": 163289
                 },
                 "from": {
-                    "file": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\src\\main\\res\\values\\styles.xml",
+                    "file": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\src\\main\\res\\values\\styles.xml",
                     "position": {
                         "startLine": 83,
                         "startColumn": 4,
@@ -13823,7 +13823,7 @@
                     "endOffset": 163558
                 },
                 "from": {
-                    "file": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\src\\main\\res\\values\\styles.xml",
+                    "file": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\src\\main\\res\\values\\styles.xml",
                     "position": {
                         "startLine": 76,
                         "startColumn": 4,
@@ -13844,7 +13844,7 @@
                     "endOffset": 163770
                 },
                 "from": {
-                    "file": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\src\\main\\res\\values\\styles.xml",
+                    "file": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\src\\main\\res\\values\\styles.xml",
                     "position": {
                         "startLine": 62,
                         "startColumn": 4,
@@ -13865,7 +13865,7 @@
                     "endOffset": 164104
                 },
                 "from": {
-                    "file": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\src\\main\\res\\values\\styles.xml",
+                    "file": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\src\\main\\res\\values\\styles.xml",
                     "position": {
                         "startLine": 68,
                         "startColumn": 4,
@@ -13886,7 +13886,7 @@
                     "endOffset": 164624
                 },
                 "from": {
-                    "file": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\src\\main\\res\\values\\styles.xml",
+                    "file": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\src\\main\\res\\values\\styles.xml",
                     "position": {
                         "startLine": 40,
                         "startColumn": 4,
@@ -13907,7 +13907,7 @@
                     "endOffset": 165150
                 },
                 "from": {
-                    "file": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\src\\main\\res\\values\\styles.xml",
+                    "file": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\src\\main\\res\\values\\styles.xml",
                     "position": {
                         "startLine": 51,
                         "startColumn": 4,

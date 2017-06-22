@@ -10,8 +10,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import org.thermostatapp.util.HeatingSystem;
-import org.thermostatapp.util.WeekProgram;
+import org.thermostatapp.util.*;
+
+/**
+ * Created by s168239
+ */
 
 public class WeekOverview extends AppCompatActivity {
 

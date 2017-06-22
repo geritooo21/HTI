@@ -11,12 +11,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
-
-import org.thermostatapp.util.HeatingSystem;
-import org.thermostatapp.util.Switch;
-import org.thermostatapp.util.WeekProgram;
-
 import java.util.ArrayList;
+
+import org.thermostatapp.util.*;
+
+/**
+ * Created by s168239
+ */
 
 public class DayOverview extends AppCompatActivity {
 
@@ -47,10 +48,6 @@ public class DayOverview extends AppCompatActivity {
         HeatingSystem.BASE_ADDRESS = "http://wwwis.win.tue.nl/2id40-ws/50";
         HeatingSystem.WEEK_PROGRAM_ADDRESS = HeatingSystem.BASE_ADDRESS + "/weekProgram";
 
-        update();
-
-        createDayOverview();
-
         for (int i = 0; i < layout.length; i++) {
             String ID = "layout" + i;
             int resID = getResources().getIdentifier(ID, "id", getPackageName());
@@ -66,6 +63,9 @@ public class DayOverview extends AppCompatActivity {
             int resID = getResources().getIdentifier(ID, "id", getPackageName());
             time[i] = (TextView) findViewById(resID);
         }
+
+        update();
+        createDayOverview();
 
         for (int i = 0; i < edit.length; i++) {
             final int j = i;

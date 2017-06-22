@@ -1,13 +1,5 @@
 package nl.tue.demothermostat;
 
-import org.thermostatapp.util.HeatingSystem;
-import org.thermostatapp.util.WeekProgram;
-
-import static nl.tue.demothermostat.R.id.bPlus;
-import static nl.tue.demothermostat.R.id.data2;
-import static nl.tue.demothermostat.R.id.seekBar;
-import static nl.tue.demothermostat.R.id.targetTemp;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -15,26 +7,23 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
+import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import org.thermostatapp.util.*;
 
 /**
- * Created by s168945 on 21-6-2017.
+ * Created by s168945
  */
 
 public class SetDayNight extends AppCompatActivity {
 
-    ImageView dayPlus, dayMinus, nightPlus, nightMinus;
-    String dayTempString, nightTempString;
-    double dayvTemp, nightvTemp;
-    int dayTempProg, nightTempProg;
-    TextView dayTemp, nightTemp;
-    SeekBar daySeekbar, nightSeekbar;
-    Intent home;
+    private LinearLayout activityLayout;
+    private TextView dayTemp, nightTemp;
+    private SeekBar daySeekbar, nightSeekbar;
+    private int day, night;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,228 +36,118 @@ public class SetDayNight extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar3.setNavigationIcon(R.drawable.homeicon);
 
-        toolbar3.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"your icon was clicked", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(v.getContext(), ThermostatActivity.class));
-            }
-        });
-
+        activityLayout = (LinearLayout) findViewById(R.id.daynight_set);
 
         HeatingSystem.BASE_ADDRESS = "http://wwwis.win.tue.nl/2id40-ws/50";
         HeatingSystem.WEEK_PROGRAM_ADDRESS = HeatingSystem.BASE_ADDRESS + "/weekProgram";
 
-        dayPlus = (ImageView) findViewById(R.id.plusDay);
-        dayMinus = (ImageView) findViewById(R.id.minusDay);
-        nightPlus = (ImageView) findViewById(R.id.plusNight);
-        nightMinus = (ImageView) findViewById(R.id.minusNight);
+        ImageView dayPlus = (ImageView) findViewById(R.id.plusDay);
+        ImageView dayMinus = (ImageView) findViewById(R.id.minusDay);
+        ImageView nightPlus = (ImageView) findViewById(R.id.plusNight);
+        ImageView nightMinus = (ImageView) findViewById(R.id.minusNight);
         dayTemp = (TextView) findViewById(R.id.dayTemp);
         nightTemp = (TextView) findViewById(R.id.nightTemp);
         daySeekbar = (SeekBar) findViewById(R.id.daySeekbar);
         nightSeekbar = (SeekBar) findViewById(R.id.nightSeekbar);
 
+        updateOverview();
 
-        new Thread(new Runnable() {
+        toolbar3.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
-            public void run() {
-                dayTempString = "";
-                try {
-                    dayTempString = HeatingSystem.get("dayTemperature");
-                    dayTemp.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            dayvTemp = Double.parseDouble(dayTempString);
-                            dayTemp.setText(dayvTemp + "\u2103");
-                            dayTempProg = (int)Math.round(dayvTemp*10);
-                            daySeekbar.setProgress(dayTempProg);
-                        }
-                    });
-                } catch (Exception e) {
-                    System.err.println("Error from getdata " + e);
-                }
+            public void onClick(View v) {
+                startActivity(new Intent(v.getContext(), ThermostatActivity.class));
             }
-        }).start();
+        });
 
-        new Thread(new Runnable() {
+        dayPlus.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void run() {
-                nightTempString = "";
-                try {
-                    nightTempString = HeatingSystem.get("nightTemperature");
-                    nightTemp.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            nightvTemp = Double.parseDouble(nightTempString);
-                            nightTemp.setText(nightvTemp + "\u2103");
-                            nightTempProg = (int)Math.round(nightvTemp*10);
-                            nightSeekbar.setProgress(nightTempProg);
-                        }
-                    });
-                } catch (Exception e) {
-                    System.err.println("Error from getdata " + e);
+            public void onClick(View view) {
+                if (day < 300) {
+                    day++;
+                    setDayText();
+                    daySeekbar.setProgress(day-50);
+                    uploadDayOnServer();
                 }
             }
-        }).start();
-
-
-    dayPlus.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            dayvTemp = Math.round(dayvTemp * 10.0 + 1) / 10.0;
-            dayTempProg = (int)Math.round(dayvTemp*10);
-            if(dayTempProg<=50) {
-                dayTempProg = 50;
-                dayvTemp = 5;
-            } else {
-                if(dayTempProg>=300) {
-                    dayTempProg = 300;
-                    dayvTemp = 30;
-                }
-            }
-            dayTemp.setText(dayvTemp + "\u2103");
-            daySeekbar.setProgress(dayTempProg);
-            uploadDayTempOnServer();
-        }
-    });
+        });
 
         dayMinus.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            dayvTemp = Math.round((dayvTemp * 10.0) - 1) / 10.0;
-            dayTempProg = (int)Math.round(dayvTemp*10);
-            if(dayTempProg<=50) {
-                dayTempProg = 50;
-                dayvTemp = 5;
-            } else {
-                if(dayTempProg>=300) {
-                    dayTempProg = 300;
-                    dayvTemp = 30;
+            @Override
+            public void onClick(View view) {
+                if (day >50) {
+                    day--;
+                    setDayText();
+                    daySeekbar.setProgress(day-50);
+                    uploadDayOnServer();
                 }
             }
-            dayTemp.setText(dayvTemp + "\u2103");
-            daySeekbar.setProgress(dayTempProg);
-            uploadDayTempOnServer();
-        }
-    });
+        });
 
-        daySeekbar.setProgress(dayTempProg);
         daySeekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-        @Override
-        public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-            dayvTemp = progress/10.0;
-            dayTempProg = (int)Math.round(dayvTemp*10);
-            if(dayTempProg<=50) {
-                dayTempProg = 50;
-                dayvTemp = 5;
-            } else {
-                if(dayTempProg>=300) {
-                    dayTempProg = 300;
-                    dayvTemp = 30;
-                }
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                day = progress + 50;
+                setDayText();
             }
-            dayTemp.setText(dayvTemp + "\u2103");
-            uploadDayTempOnServer();
-        }
 
-        @Override
-        public void onStartTrackingTouch(SeekBar seekBar) {
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {}
 
-        }
-
-        @Override
-        public void onStopTrackingTouch(SeekBar seekBar) {
-
-        }
-    });
-
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                uploadDayOnServer();
+            }
+        });
 
         nightPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                nightvTemp = Math.round(nightvTemp * 10.0 + 1) / 10.0;
-                nightTempProg = (int)Math.round(nightvTemp*10);
-                if(nightTempProg<=50) {
-                    nightTempProg = 50;
-                    nightvTemp = 5;
-                } else {
-                    if(nightTempProg>=300) {
-                        nightTempProg = 300;
-                        nightvTemp = 30;
-                    }
+                if (night < 300) {
+                    night++;
+                    setNightText();
+                    nightSeekbar.setProgress(night-50);
+                    uploadNightOnServer();
                 }
-                nightTemp.setText(nightvTemp + "\u2103");
-                nightSeekbar.setProgress(nightTempProg);
-                uploadNightTempOnServer();
             }
         });
 
         nightMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                nightvTemp = Math.round((nightvTemp * 10.0) - 1) / 10.0;
-                nightTempProg = (int)Math.round(nightvTemp*10);
-                if(nightTempProg<=50) {
-                    nightTempProg = 50;
-                    nightvTemp = 5;
-                } else {
-                    if(nightTempProg>=300) {
-                        nightTempProg = 300;
-                        nightvTemp = 30;
-                    }
+                if (night > 50) {
+                    night--;
+                    setNightText();
+                    nightSeekbar.setProgress(night-50);
+                    uploadNightOnServer();
                 }
-                nightTemp.setText(nightvTemp + "\u2103");
-                nightSeekbar.setProgress(nightTempProg);
-                uploadNightTempOnServer();
             }
         });
 
-        nightSeekbar.setProgress(nightTempProg);
         nightSeekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                nightvTemp = progress/10.0;
-                nightTempProg = (int)Math.round(nightvTemp*10);
-                if(nightTempProg<=50) {
-                    nightTempProg = 50;
-                    nightvTemp = 5;
-                } else {
-                    if(nightTempProg>=300) {
-                        nightTempProg = 300;
-                        nightvTemp = 30;
-                    }
-                }
-                nightTemp.setText(nightvTemp + "\u2103");
-                uploadNightTempOnServer();
+                night = progress + 50;
+                setNightText();
             }
 
             @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
+            public void onStartTrackingTouch(SeekBar seekBar) {}
 
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-
+                uploadNightOnServer();
             }
         });
-  }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_thermostat, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
         switch (item.getItemId()) {
             case R.id.setDayNight:
                 return true;
@@ -281,42 +160,91 @@ public class SetDayNight extends AppCompatActivity {
                 startActivity(intent1);
                 break;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
+    public void updateOverview() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    final String dayTempString = HeatingSystem.get("dayTemperature");
+                    try {
+                        day = Integer.parseInt(dayTempString.substring(0, 2) + dayTempString.substring(3, 4));
+                    } catch (Exception e) {
+                        day = Integer.parseInt(dayTempString.substring(0, 1) + dayTempString.substring(2, 3));
+                    }
 
-    public void uploadDayTempOnServer() {
-      new Thread(new Runnable() {
-          @Override
-          public void run() {
-              try {
-                  dayTempString = String.valueOf(dayvTemp);
-                  HeatingSystem.put("dayTemperature", dayTempString);
+                    final String nightTempString = HeatingSystem.get("nightTemperature");
+                    try {
+                        night = Integer.parseInt(nightTempString.substring(0, 2) + nightTempString.substring(3, 4));
+                    } catch (Exception e) {
+                        night = Integer.parseInt(nightTempString.substring(0, 1) + nightTempString.substring(2, 3));
+                    }
 
-                  WeekProgram wpg = HeatingSystem.getWeekProgram();
-                  wpg.setDefault();
-              } catch (Exception e) {
-                  System.err.println("Error from getdata " + e);
-              }
-          }
-      }).start();
-  }
+                    activityLayout.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            dayTemp.setText(dayTempString + "\u2103");
+                            daySeekbar.setProgress(day - 50);
+                            nightTemp.setText(nightTempString + "\u2103");
+                            nightSeekbar.setProgress(night - 50);
+                        }
+                    });
+                } catch (Exception e) {
+                    System.err.println("Error from getdata " + e);
+                }
+            }
+        }).start();
+    }
 
-  public void uploadNightTempOnServer() {
-      new Thread(new Runnable() {
-          @Override
-          public void run() {
-              try {
-                  nightTempString = String.valueOf(nightvTemp);
-                  HeatingSystem.put("nightTemperature", nightTempString);
+    public void setDayText() {
+        if (day < 100) {
+            dayTemp.setText(Integer.toString(day).substring(0,1) + "." + Integer.toString(day).substring(1,2) + "\u2103");
+        } else {
+            dayTemp.setText(Integer.toString(day).substring(0,2) + "." + Integer.toString(day).substring(2,3) + "\u2103");
+        }
+    }
 
-                  WeekProgram wpg = HeatingSystem.getWeekProgram();
-                  wpg.setDefault();
-              } catch (Exception e) {
-                  System.err.println("Error from getdata " + e);
-              }
-          }
-      }).start();
-  }
+    public void setNightText() {
+        if (night < 100) {
+            nightTemp.setText(Integer.toString(night).substring(0,1) + "." + Integer.toString(night).substring(1,2) + "\u2103");
+        } else {
+            nightTemp.setText(Integer.toString(night).substring(0,2) + "." + Integer.toString(night).substring(2,3) + "\u2103");
+        }
+    }
+
+    public void uploadDayOnServer() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    if (day < 100) {
+                        HeatingSystem.put("dayTemperature", Integer.toString(day).substring(0, 1) + "." + Integer.toString(day).substring(1, 2));
+                    } else {
+                        HeatingSystem.put("dayTemperature", Integer.toString(day).substring(0, 2) + "." + Integer.toString(day).substring(2, 3));
+                    }
+                } catch (Exception e) {
+                    System.err.println("Error from getdata " + e);
+                }
+            }
+        }).start();
+    }
+
+    public void uploadNightOnServer() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    if (night < 100) {
+                        HeatingSystem.put("nightTemperature", Integer.toString(night).substring(0, 1) + "." + Integer.toString(night).substring(1, 2));
+                    } else {
+                        HeatingSystem.put("nightTemperature", Integer.toString(night).substring(0, 2) + "." + Integer.toString(night).substring(2, 3));
+                    }
+                } catch (Exception e) {
+                    System.err.println("Error from getdata " + e);
+                }
+            }
+        }).start();
+    }
 }
