@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -26,9 +27,9 @@ import org.thermostatapp.util.*;
 public class DayOverview extends AppCompatActivity {
 
     private WeekProgram wpg;
+    ArrayList<Switch> switches = new ArrayList<>();
     public static int dayNumber = 0;
     private LinearLayout activityLayout;
-    ArrayList<Switch> switches = new ArrayList<>();
 
     private LinearLayout[] layout = new LinearLayout[10];
     private ImageView[] icon = new ImageView[10];
@@ -78,7 +79,6 @@ public class DayOverview extends AppCompatActivity {
         }
 
         update();
-        createDayOverview();
 
         for (int i = 0; i < layout.length; i++) {
             final int j = i;
@@ -86,58 +86,60 @@ public class DayOverview extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
 
+                    editType = true;
+
+                    AlertDialog.Builder menuBuilder = new AlertDialog.Builder(DayOverview.this);
+                    View menuView = getLayoutInflater().inflate(R.layout.add, null);
+
+                    final ImageView type = (ImageView) menuView.findViewById(R.id.type);
+                    final TextView time = (TextView) menuView.findViewById(R.id.time);
+                    final Button cancel = (Button) menuView.findViewById(R.id.cancel);
+                    final Button done = (Button) menuView.findViewById(R.id.done);
+
+                    menuBuilder.setView(menuView);
+                    final AlertDialog dialog = menuBuilder.create();
+                    dialog.show();
+
+                    final String currentType = switches.get(j).getType();
+                    final String currentTime = switches.get(j).getTime();
+
+                    editHour = Integer.parseInt(currentTime.substring(0, 2));
+                    editMinute = Integer.parseInt(currentTime.substring(3, 5));
+
+                    if (currentType.equals("day")) {
+                        type.setImageResource(R.drawable.sun);
                         editType = true;
+                    } else if (currentType.equals("night")) {
+                        type.setImageResource(R.drawable.moon);
+                        editType = false;
+                    }
 
-                        AlertDialog.Builder menuBuilder = new AlertDialog.Builder(DayOverview.this);
-                        View menuView = getLayoutInflater().inflate(R.layout.add, null);
+                    boolean day = false;
+                    boolean night = false;
 
-                        final ImageView type = (ImageView) menuView.findViewById(R.id.type);
-                        final TextView time = (TextView) menuView.findViewById(R.id.time);
-                        final Button cancel = (Button) menuView.findViewById(R.id.cancel);
-                        final Button done = (Button) menuView.findViewById(R.id.done);
+                    for (int i = 0; i < switches.size(); i++) {
+                        if (!switches.get(i).getState() && switches.get(i).getType().equals("day")) {
+                            day = true;
+                        } else if (!switches.get(i).getState() && switches.get(i).getType().equals("night")) {
+                            night = true;
+                        }
+                    }
 
-                        menuBuilder.setView(menuView);
-                        final AlertDialog dialog = menuBuilder.create();
-                        dialog.show();
-
-                        new Thread(new Runnable() {
+                    if (!day && !editType) {
+                        type.setOnClickListener(new View.OnClickListener() {
                             @Override
-                            public void run() {
-                                try {
-
-                                    WeekProgram wpg = HeatingSystem.getWeekProgram();
-
-                                    final String currentType = wpg.data.get(wpg.valid_days[dayNumber]).get(j).getType();
-                                    final String currentTime = wpg.data.get(wpg.valid_days[dayNumber]).get(j).getTime();
-
-                                    editHour = Integer.parseInt(currentTime.substring(0, 2));
-                                    editMinute = Integer.parseInt(currentTime.substring(3, 5));
-
-                                    activityLayout.post(new Runnable() {
-                                        @Override
-                                        public void run() {
-                                            if (currentType.equals("day")) {
-                                                type.setImageResource(R.drawable.sun);
-                                                editType = true;
-                                            } else if (currentType.equals("night")) {
-                                                type.setImageResource(R.drawable.moon);
-                                                editType = false;
-                                            }
-                                            time.setText(currentTime);
-                                        }
-                                    });
-                                } catch (Exception e) {
-                                    activityLayout.post(new Runnable() {
-                                        @Override
-                                        public void run() {
-                                            Toast.makeText(DayOverview.this, R.string.cancel, Toast.LENGTH_SHORT).show();
-                                            dialog.dismiss();
-                                        }
-                                    });
-                                }
+                            public void onClick(View view) {
+                                Toast.makeText(DayOverview.this, R.string.fullDay, Toast.LENGTH_SHORT).show();
                             }
-                        }).start();
-
+                        });
+                    } else if (!night && editType) {
+                        type.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Toast.makeText(DayOverview.this, R.string.fullNight, Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    } else {
                         type.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
@@ -150,98 +152,91 @@ public class DayOverview extends AppCompatActivity {
                                 }
                             }
                         });
+                    }
 
-                        time.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                TimePickerDialog timePicker;
-                                timePicker = new TimePickerDialog(DayOverview.this, R.style.DialogTheme, new TimePickerDialog.OnTimeSetListener() {
-                                    @Override
-                                    public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
-                                        String selection = selectedHour + ":" + selectedMinute;
-                                        if (selectedMinute < 10 && selectedHour < 10) {
-                                            selection = "0" + selectedHour + ":0" + selectedMinute;
-                                        } else if (selectedMinute < 10) {
-                                            selection = selectedHour + ":0" + selectedMinute;
-                                        } else if (selectedHour < 10) {
-                                            selection = "0" + selectedHour + ":" + selectedMinute;
-                                        }
-                                        time.setText(selection);
+                    time.setText(currentTime);
+
+                    time.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            TimePickerDialog timePicker;
+                            timePicker = new TimePickerDialog(DayOverview.this, R.style.DialogTheme, new TimePickerDialog.OnTimeSetListener() {
+                                @Override
+                                public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
+                                    String selection = selectedHour + ":" + selectedMinute;
+                                    if (selectedMinute < 10 && selectedHour < 10) {
+                                        selection = "0" + selectedHour + ":0" + selectedMinute;
+                                    } else if (selectedMinute < 10) {
+                                        selection = selectedHour + ":0" + selectedMinute;
+                                    } else if (selectedHour < 10) {
+                                        selection = "0" + selectedHour + ":" + selectedMinute;
                                     }
-                                }, editHour, editMinute, true);
-                                timePicker.setTitle("Select Time");
-                                timePicker.show();
-                            }
-                        });
-
-                        cancel.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                Toast.makeText(DayOverview.this, R.string.cancel, Toast.LENGTH_SHORT).show();
-                                dialog.dismiss();
-                            }
-                        });
-
-                        done.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
-                                String type = "night";
-                                if (editType) {
-                                    type = "day";
+                                    time.setText(selection);
                                 }
+                            }, editHour, editMinute, true);
+                            timePicker.setTitle("Select Time");
+                            timePicker.show();
+                        }
+                    });
 
-                                final Switch plus = new Switch(type, true, time.getText().toString());
+                    cancel.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Toast.makeText(DayOverview.this, R.string.cancel, Toast.LENGTH_SHORT).show();
+                            dialog.dismiss();
+                        }
+                    });
 
-                                new Thread(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        try {
-
-                                            WeekProgram wpg = HeatingSystem.getWeekProgram();
-
-                                            wpg.data.get(wpg.valid_days[dayNumber]).set(j, new Switch(wpg.data.get(wpg.valid_days[dayNumber]).get(j).getType(), false, "00:00"));
-
-                                            if (editType) {
-                                                for (int i = 0; i < wpg.data.get(wpg.valid_days[dayNumber]).size(); i++) {
-                                                    if (!wpg.data.get(wpg.valid_days[dayNumber]).get(i).getState() && wpg.data.get(wpg.valid_days[dayNumber]).get(i).getType().equals("day")) {
-                                                        wpg.data.get(wpg.valid_days[dayNumber]).set(i, plus);
-                                                        break;
-                                                    }
-                                                }
-                                            } else {
-                                                for (int i = 0; i < wpg.data.get(wpg.valid_days[dayNumber]).size(); i++) {
-                                                    if (!wpg.data.get(wpg.valid_days[dayNumber]).get(i).getState() && wpg.data.get(wpg.valid_days[dayNumber]).get(i).getType().equals("night")) {
-                                                        wpg.data.get(wpg.valid_days[dayNumber]).set(i, plus);
-                                                        break;
-                                                    }
-                                                }
-                                            }
-
-                                            HeatingSystem.setWeekProgram(wpg);
-
-                                            createDayOverview();
-
-                                            activityLayout.post(new Runnable() {
-                                                @Override
-                                                public void run() {
-                                                    Toast.makeText(DayOverview.this, R.string.edit, Toast.LENGTH_SHORT).show();
-                                                }
-                                            });
-                                        } catch (Exception e) {
-                                            activityLayout.post(new Runnable() {
-                                                @Override
-                                                public void run() {
-                                                    Toast.makeText(DayOverview.this, R.string.cancel, Toast.LENGTH_SHORT).show();
-                                                    dialog.dismiss();
-                                                }
-                                            });
-                                        }
-                                    }
-                                }).start();
-
-                                dialog.dismiss();
+                    done.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            String type = "night";
+                            if (editType) {
+                                type = "day";
                             }
-                        });
+
+                            Switch plus = new Switch(type, true, time.getText().toString());
+
+                            switches.set(j, new Switch(switches.get(j).getType(), false, "00:00"));
+
+                            if (editType) {
+                                for (int i = 0; i < switches.size() + 1; i++) {
+                                    if (i == switches.size()) {
+                                        activityLayout.post(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                Toast.makeText(DayOverview.this, R.string.full, Toast.LENGTH_SHORT).show();
+                                            }
+                                        });
+                                    } else if (!switches.get(i).getState() && switches.get(i).getType().equals("day")) {
+                                        switches.set(i, plus);
+                                        break;
+                                    }
+                                }
+                            } else {
+                                for (int i = 0; i < switches.size() + 1; i++) {
+                                    if (i == switches.size()) {
+                                        activityLayout.post(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                Toast.makeText(DayOverview.this, R.string.full, Toast.LENGTH_SHORT).show();
+                                            }
+                                        });
+                                    } else if (!switches.get(i).getState() && switches.get(i).getType().equals("night")) {
+                                        switches.set(i, plus);
+                                        break;
+                                    }
+                                }
+                            }
+
+                            upload();
+                            createDayOverview();
+
+                            Toast.makeText(DayOverview.this, R.string.edit, Toast.LENGTH_SHORT).show();
+
+                            dialog.dismiss();
+                        }
+                    });
                 }
             });
 
@@ -255,34 +250,13 @@ public class DayOverview extends AppCompatActivity {
             delete[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    new Thread(new Runnable() {
-                        @Override
-                        public void run() {
-                            try {
-                                WeekProgram wpg = HeatingSystem.getWeekProgram();
 
-                                wpg.data.get(wpg.valid_days[dayNumber]).set(j, new Switch(wpg.data.get(wpg.valid_days[dayNumber]).get(j).getType(), false, "00:00"));
+                    switches.set(j, new Switch(switches.get(j).getType(), false, "00:00"));
 
-                                HeatingSystem.setWeekProgram(wpg);
+                    upload();
+                    createDayOverview();
 
-                                createDayOverview();
-
-                                activityLayout.post(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        Toast.makeText(DayOverview.this, R.string.delete, Toast.LENGTH_SHORT).show();
-                                    }
-                                });
-                            } catch (Exception e) {
-                                activityLayout.post(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        Toast.makeText(DayOverview.this, R.string.cancel, Toast.LENGTH_SHORT).show();
-                                    }
-                                });
-                            }
-                        }
-                    }).start();
+                    Toast.makeText(DayOverview.this, R.string.delete, Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -306,18 +280,52 @@ public class DayOverview extends AppCompatActivity {
                     final AlertDialog dialog = menuBuilder.create();
                     dialog.show();
 
-                    type.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                            if (plusType) {
-                                type.setImageResource(R.drawable.moon);
-                                plusType = false;
-                            } else {
-                                type.setImageResource(R.drawable.sun);
-                                plusType = true;
-                            }
+                    boolean day = false;
+                    boolean night = false;
+
+                    for (int i = 0; i < switches.size(); i++) {
+                        if (!switches.get(i).getState() && switches.get(i).getType().equals("day")) {
+                            day = true;
+                        } else if (!switches.get(i).getState() && switches.get(i).getType().equals("night")) {
+                            night = true;
                         }
-                    });
+                    }
+
+                    if (!day && !night) {
+                        Toast.makeText(DayOverview.this, R.string.full, Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
+                    } else if (!day) {
+                        type.setImageResource(R.drawable.moon);
+                        plusType = false;
+                        type.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Toast.makeText(DayOverview.this, R.string.fullDay, Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    } else if (!night) {
+                        type.setImageResource(R.drawable.sun);
+                        plusType = true;
+                        type.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Toast.makeText(DayOverview.this, R.string.fullNight, Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    } else {
+                        type.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                if (plusType) {
+                                    type.setImageResource(R.drawable.moon);
+                                    plusType = false;
+                                } else {
+                                    type.setImageResource(R.drawable.sun);
+                                    plusType = true;
+                                }
+                            }
+                        });
+                    }
 
                     time.setOnClickListener(new View.OnClickListener() {
                         @Override
@@ -360,50 +368,24 @@ public class DayOverview extends AppCompatActivity {
 
                             final Switch plus = new Switch(type, true, time.getText().toString());
 
-                            new Thread(new Runnable() {
-                                @Override
-                                public void run() {
-                                    try {
-
-                                        WeekProgram wpg = HeatingSystem.getWeekProgram();
-
-                                        if (plusType) {
-                                            for (int i = 0; i < wpg.data.get(wpg.valid_days[dayNumber]).size(); i++) {
-                                                if (!wpg.data.get(wpg.valid_days[dayNumber]).get(i).getState() && wpg.data.get(wpg.valid_days[dayNumber]).get(i).getType().equals("day")) {
-                                                    wpg.data.get(wpg.valid_days[dayNumber]).set(i, plus);
-                                                    break;
-                                                }
-                                            }
-                                        } else {
-                                            for (int i = 0; i < wpg.data.get(wpg.valid_days[dayNumber]).size(); i++) {
-                                                if (!wpg.data.get(wpg.valid_days[dayNumber]).get(i).getState() && wpg.data.get(wpg.valid_days[dayNumber]).get(i).getType().equals("night")) {
-                                                    wpg.data.get(wpg.valid_days[dayNumber]).set(i, plus);
-                                                    break;
-                                                }
-                                            }
-                                        }
-
-                                        HeatingSystem.setWeekProgram(wpg);
-
-                                        createDayOverview();
-
-                                        activityLayout.post(new Runnable() {
-                                            @Override
-                                            public void run() {
-                                                Toast.makeText(DayOverview.this, R.string.add, Toast.LENGTH_SHORT).show();
-                                            }
-                                        });
-                                    } catch (Exception e) {
-                                        activityLayout.post(new Runnable() {
-                                            @Override
-                                            public void run() {
-                                                Toast.makeText(DayOverview.this, R.string.cancel, Toast.LENGTH_SHORT).show();
-                                                dialog.dismiss();
-                                            }
-                                        });
+                            if (plusType) {
+                                for (int i = 0; i < switches.size(); i++) {
+                                    if (!switches.get(i).getState() && switches.get(i).getType().equals("day")) {
+                                        switches.set(i, plus);
+                                        break;
                                     }
                                 }
-                            }).start();
+                            } else {
+                                for (int i = 0; i < switches.size(); i++) {
+                                    if (!switches.get(i).getState() && switches.get(i).getType().equals("night")) {
+                                        switches.set(i, plus);
+                                        break;
+                                    }
+                                }
+                            }
+
+                            upload();
+                            createDayOverview();
 
                             dialog.dismiss();
                         }
@@ -444,44 +426,52 @@ public class DayOverview extends AppCompatActivity {
             public void run() {
                 try {
                     wpg = HeatingSystem.getWeekProgram();
+                    switches = wpg.data.get(WeekProgram.valid_days[dayNumber]);
+                    createDayOverview();
                 } catch (Exception e) {
-                    System.err.println("Error from getdata " + e);
+                    activityLayout.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(DayOverview.this, R.string.error, Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+            }
+        }).start();
+    }
+
+    public void upload() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    wpg.data.put(WeekProgram.valid_days[dayNumber], switches);
+                    HeatingSystem.setWeekProgram(wpg);
+                } catch (Exception e) {
+                    activityLayout.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(DayOverview.this, R.string.error, Toast.LENGTH_SHORT).show();
+                        }
+                    });
                 }
             }
         }).start();
     }
 
     public void createDayOverview() {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    WeekProgram wpg = HeatingSystem.getWeekProgram();
-
-                    switches = wpg.data.get(wpg.valid_days[dayNumber]);
-
-                } catch (Exception e) {
-                    System.err.println("Error from getdata " + e);
+        for (int i = 0; i < layout.length; i++) {
+            if (switches.get(i).getState() && switches.get(i) != null ) {
+                layout[i].setVisibility(View.VISIBLE);
+                if (switches.get(i).getType().equals("day")) {
+                    icon[i].setImageResource(R.drawable.sun);
+                } else {
+                    icon[i].setImageResource(R.drawable.moon);
                 }
-                activityLayout.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        for (int i = 0; i < layout.length; i++) {
-                            if (switches.get(i).getState() && switches.get(i) != null ) {
-                                layout[i].setVisibility(View.VISIBLE);
-                                if (switches.get(i).getType().equals("day")) {
-                                    icon[i].setImageResource(R.drawable.sun);
-                                } else {
-                                    icon[i].setImageResource(R.drawable.moon);
-                                }
-                                time[i].setText(switches.get(i).getTime());
-                            } else {
-                                layout[i].setVisibility(View.GONE);
-                            }
-                        }
-                    }
-                });
+                time[i].setText(switches.get(i).getTime());
+            } else {
+                layout[i].setVisibility(View.GONE);
             }
-        }).start();
+        }
     }
 }

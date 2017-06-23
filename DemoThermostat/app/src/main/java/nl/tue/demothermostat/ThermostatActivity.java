@@ -75,7 +75,7 @@ public class ThermostatActivity extends AppCompatActivity {
         bMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (target >50) {
+                if (target > 50) {
                     target = target - 1;
                     setTargetText();
                     seekBar.setProgress(target-50);

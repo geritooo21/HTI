@@ -1,4 +1,4 @@
-#Fri Jun 23 11:32:07 CEST 2017
+#Fri Jun 23 16:44:12 CEST 2017
 base.0=C\:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
 renamed.0=classes.dex
 file.0=C\:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

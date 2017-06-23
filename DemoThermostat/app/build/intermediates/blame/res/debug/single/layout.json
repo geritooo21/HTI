@@ -4,12 +4,12 @@
         "source": "C:\\Users\\s168239\\.android\\build-cache\\a51330cb48925fb97599313b01ad2efd9f08ee40\\output\\res\\layout\\design_layout_snackbar.xml"
     },
     {
-        "merged": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_title_material.xml",
-        "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\layout\\abc_alert_dialog_title_material.xml"
-    },
-    {
         "merged": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_menu_item_action_area.xml",
         "source": "C:\\Users\\s168239\\.android\\build-cache\\a51330cb48925fb97599313b01ad2efd9f08ee40\\output\\res\\layout\\design_menu_item_action_area.xml"
+    },
+    {
+        "merged": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_title_material.xml",
+        "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\layout\\abc_alert_dialog_title_material.xml"
     },
     {
         "merged": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
@@ -60,12 +60,12 @@
         "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\layout\\abc_activity_chooser_view_list_item.xml"
     },
     {
-        "merged": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
-        "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\layout\\abc_search_view.xml"
-    },
-    {
         "merged": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
         "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
+        "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\layout\\abc_search_view.xml"
     },
     {
         "merged": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_subheader.xml",
