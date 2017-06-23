@@ -83,7 +83,7 @@ public class WeekOverview extends AppCompatActivity {
                     final Button cancel = (Button) menuView.findViewById(R.id.cancel);
                     final Button reset = (Button) menuView.findViewById(R.id.reset);
 
-                    text.setText("Do you really want to reset the " + WeekProgram.valid_days[j].toLowerCase() + " program?");
+                    text.setText("Reset \n" + WeekProgram.valid_days[j] + " program?");
 
                     menuBuilder.setView(menuView);
                     final AlertDialog dialog = menuBuilder.create();

@@ -1,9 +1,5 @@
 [
     {
-        "merged": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\day.png",
-        "source": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\src\\main\\res\\drawable\\day.png"
-    },
-    {
         "merged": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_material.xml",
         "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\drawable\\abc_ratingbar_material.xml"
     },
@@ -76,12 +72,12 @@
         "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\drawable\\abc_list_selector_holo_light.xml"
     },
     {
-        "merged": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_indicator_material.xml",
-        "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\drawable\\abc_ratingbar_indicator_material.xml"
-    },
-    {
         "merged": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_ab_back_material.xml",
         "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\drawable\\abc_ic_ab_back_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_indicator_material.xml",
+        "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\drawable\\abc_ratingbar_indicator_material.xml"
     },
     {
         "merged": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_light.xml",
@@ -92,20 +88,12 @@
         "source": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\src\\main\\res\\drawable\\home_icon.png"
     },
     {
-        "merged": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\plus2.png",
-        "source": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\src\\main\\res\\drawable\\plus2.png"
-    },
-    {
         "merged": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_bg.xml",
         "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\drawable\\notification_bg.xml"
     },
     {
         "merged": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\plus.png",
         "source": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\src\\main\\res\\drawable\\plus.png"
-    },
-    {
-        "merged": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\edit.png",
-        "source": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\src\\main\\res\\drawable\\edit.png"
     },
     {
         "merged": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\reset_week.png",
@@ -180,16 +168,12 @@
         "source": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\src\\main\\res\\drawable\\kryg_outline.png"
     },
     {
-        "merged": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\night.png",
-        "source": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\src\\main\\res\\drawable\\night.png"
+        "merged": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_menu_overflow_material.xml",
+        "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\drawable\\abc_ic_menu_overflow_material.xml"
     },
     {
         "merged": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_fab_background.xml",
         "source": "C:\\Users\\s168239\\.android\\build-cache\\a51330cb48925fb97599313b01ad2efd9f08ee40\\output\\res\\drawable\\design_fab_background.xml"
-    },
-    {
-        "merged": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_menu_overflow_material.xml",
-        "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\drawable\\abc_ic_menu_overflow_material.xml"
     },
     {
         "merged": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_dark.xml",

@@ -60,7 +60,7 @@
                     android:layout_height="50dp"
                     android:src="@drawable/plus"
                     android:layout_gravity="center"
-                    android:textColor="#F3F3F3" />
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/dayTemp"
@@ -69,7 +69,7 @@
                     android:layout_weight=".33"
                     android:layout_marginTop="5dp"
                     android:layout_gravity="center"
-                    android:textColor="#F3F3F3"
+                    android:textColor="@color/white"
                     android:textSize="40dp" />
 
                 <ImageView
@@ -80,7 +80,7 @@
                     android:layout_weight=".33"
                     android:src="@drawable/minus"
                     android:layout_gravity="center"
-                    android:textColor="#F3F3F3" />
+                    android:textColor="@color/white" />
             </LinearLayout>
         </RelativeLayout>
 
@@ -89,8 +89,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:max="250"
-            android:progressTint="#F3F3F3"
-            android:thumbTint="#F3F3F3" />
+            android:progressTint="@color/white"
+            android:thumbTint="@color/white" />
     </LinearLayout>
 
     <LinearLayout
@@ -135,7 +135,7 @@
                     android:layout_height="50dp"
                     android:src="@drawable/plus"
                     android:layout_gravity="center"
-                    android:textColor="#F3F3F3" />
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/nightTemp"
@@ -144,7 +144,7 @@
                     android:layout_weight=".33"
                     android:layout_marginTop="5dp"
                     android:layout_gravity="center"
-                    android:textColor="#F3F3F3"
+                    android:textColor="@color/white"
                     android:textSize="40dp" />
 
                 <ImageView
@@ -155,7 +155,7 @@
                     android:layout_weight=".33"
                     android:src="@drawable/minus"
                     android:layout_gravity="center"
-                    android:textColor="#F3F3F3" />
+                    android:textColor="@color/white" />
             </LinearLayout>
         </RelativeLayout>
 
@@ -164,8 +164,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:max="250"
-            android:progressTint="#F3F3F3"
-            android:thumbTint="#F3F3F3" />
+            android:progressTint="@color/white"
+            android:thumbTint="@color/white" />
     </LinearLayout>
 
 </LinearLayout>

@@ -33,8 +33,6 @@ public class DayOverview extends AppCompatActivity {
     private LinearLayout[] layout = new LinearLayout[10];
     private ImageView[] icon = new ImageView[10];
     private TextView[] time = new TextView[10];
-
-    private ImageView[] edit = new ImageView[10];
     private ImageView[] delete = new ImageView[10];
 
     private boolean editType, plusType; //day = true, night = false
@@ -82,24 +80,21 @@ public class DayOverview extends AppCompatActivity {
         update();
         createDayOverview();
 
-        for (int i = 0; i < edit.length; i++) {
+        for (int i = 0; i < layout.length; i++) {
             final int j = i;
-            String ID = "edit" + i;
-            int resID = getResources().getIdentifier(ID, "id", getPackageName());
-            edit[i] = (ImageView) findViewById(resID);
-            edit[i].setOnClickListener(new View.OnClickListener() {
+            layout[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
 
                         editType = true;
 
                         AlertDialog.Builder menuBuilder = new AlertDialog.Builder(DayOverview.this);
-                        View menuView = getLayoutInflater().inflate(R.layout.edit, null);
+                        View menuView = getLayoutInflater().inflate(R.layout.add, null);
 
                         final ImageView type = (ImageView) menuView.findViewById(R.id.type);
                         final TextView time = (TextView) menuView.findViewById(R.id.time);
                         final Button cancel = (Button) menuView.findViewById(R.id.cancel);
-                        final Button edit = (Button) menuView.findViewById(R.id.edit);
+                        final Button done = (Button) menuView.findViewById(R.id.done);
 
                         menuBuilder.setView(menuView);
                         final AlertDialog dialog = menuBuilder.create();
@@ -122,10 +117,10 @@ public class DayOverview extends AppCompatActivity {
                                         @Override
                                         public void run() {
                                             if (currentType.equals("day")) {
-                                                type.setImageResource(R.drawable.day);
+                                                type.setImageResource(R.drawable.sun);
                                                 editType = true;
                                             } else if (currentType.equals("night")) {
-                                                type.setImageResource(R.drawable.night);
+                                                type.setImageResource(R.drawable.moon);
                                                 editType = false;
                                             }
                                             time.setText(currentTime);
@@ -147,10 +142,10 @@ public class DayOverview extends AppCompatActivity {
                             @Override
                             public void onClick(View view) {
                                 if (editType) {
-                                    type.setImageResource(R.drawable.night);
+                                    type.setImageResource(R.drawable.moon);
                                     editType = false;
                                 } else {
-                                    type.setImageResource(R.drawable.day);
+                                    type.setImageResource(R.drawable.sun);
                                     editType = true;
                                 }
                             }
@@ -187,7 +182,7 @@ public class DayOverview extends AppCompatActivity {
                             }
                         });
 
-                        edit.setOnClickListener(new View.OnClickListener() {
+                        done.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
                                 String type = "night";
@@ -300,12 +295,12 @@ public class DayOverview extends AppCompatActivity {
                     plusType = true;
 
                     AlertDialog.Builder menuBuilder = new AlertDialog.Builder(DayOverview.this);
-                    View menuView = getLayoutInflater().inflate(R.layout.plus, null);
+                    View menuView = getLayoutInflater().inflate(R.layout.add, null);
 
                     final ImageView type = (ImageView) menuView.findViewById(R.id.type);
                     final TextView time = (TextView) menuView.findViewById(R.id.time);
                     final Button cancel = (Button) menuView.findViewById(R.id.cancel);
-                    final Button add = (Button) menuView.findViewById(R.id.add);
+                    final Button done = (Button) menuView.findViewById(R.id.done);
 
                     menuBuilder.setView(menuView);
                     final AlertDialog dialog = menuBuilder.create();
@@ -315,10 +310,10 @@ public class DayOverview extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
                             if (plusType) {
-                                type.setImageResource(R.drawable.night);
+                                type.setImageResource(R.drawable.moon);
                                 plusType = false;
                             } else {
-                                type.setImageResource(R.drawable.day);
+                                type.setImageResource(R.drawable.sun);
                                 plusType = true;
                             }
                         }
@@ -355,7 +350,7 @@ public class DayOverview extends AppCompatActivity {
                         }
                     });
 
-                    add.setOnClickListener(new View.OnClickListener() {
+                    done.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
                             String type = "night";
@@ -475,9 +470,9 @@ public class DayOverview extends AppCompatActivity {
                             if (switches.get(i).getState() && switches.get(i) != null ) {
                                 layout[i].setVisibility(View.VISIBLE);
                                 if (switches.get(i).getType().equals("day")) {
-                                    icon[i].setImageResource(R.drawable.day);
+                                    icon[i].setImageResource(R.drawable.sun);
                                 } else {
-                                    icon[i].setImageResource(R.drawable.night);
+                                    icon[i].setImageResource(R.drawable.moon);
                                 }
                                 time[i].setText(switches.get(i).getTime());
                             } else {

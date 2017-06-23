@@ -7,8 +7,8 @@
     android:orientation="vertical"
     android:gravity="center_horizontal"
     tools:context="nl.tue.demothermostat.DayOverview"
-    android:weightSum="1"
-    android:background="#407F7F">
+    android:weightSum="11"
+    android:background="@color/light">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -21,18 +21,15 @@
     <LinearLayout
         android:id="@+id/layout0"
         style="@style/weekSwitch"
-        android:visibility="visible" >
+        android:visibility="gone" >
         <ImageView
             android:id="@+id/icon0"
             style="@style/iconSwitch"
-            android:src="@drawable/day" />
+            android:src="@drawable/sun" />
         <TextView
             android:id="@+id/time0"
             style="@style/textSwitch"
             android:text="00:00" />
-        <ImageView
-            android:id="@+id/edit0"
-            style="@style/editSwitch" />
         <ImageView
             android:id="@+id/delete0"
             style="@style/deleteSwitch" />
@@ -40,18 +37,15 @@
     <LinearLayout
         android:id="@+id/layout1"
         style="@style/weekSwitch"
-        android:visibility="visible" >
+        android:visibility="gone" >
         <ImageView
             android:id="@+id/icon1"
             style="@style/iconSwitch"
-            android:src="@drawable/day" />
+            android:src="@drawable/sun" />
         <TextView
             android:id="@+id/time1"
             style="@style/textSwitch"
             android:text="00:00" />
-        <ImageView
-            android:id="@+id/edit1"
-            style="@style/editSwitch" />
         <ImageView
             android:id="@+id/delete1"
             style="@style/deleteSwitch" />
@@ -59,18 +53,15 @@
     <LinearLayout
         android:id="@+id/layout2"
         style="@style/weekSwitch"
-        android:visibility="visible" >
+        android:visibility="gone" >
         <ImageView
             android:id="@+id/icon2"
             style="@style/iconSwitch"
-            android:src="@drawable/day" />
+            android:src="@drawable/sun" />
         <TextView
             android:id="@+id/time2"
             style="@style/textSwitch"
             android:text="00:00" />
-        <ImageView
-            android:id="@+id/edit2"
-            style="@style/editSwitch" />
         <ImageView
             android:id="@+id/delete2"
             style="@style/deleteSwitch" />
@@ -78,18 +69,15 @@
     <LinearLayout
         android:id="@+id/layout3"
         style="@style/weekSwitch"
-        android:visibility="visible" >
+        android:visibility="gone" >
         <ImageView
             android:id="@+id/icon3"
             style="@style/iconSwitch"
-            android:src="@drawable/day" />
+            android:src="@drawable/sun" />
         <TextView
             android:id="@+id/time3"
             style="@style/textSwitch"
             android:text="00:00" />
-        <ImageView
-            android:id="@+id/edit3"
-            style="@style/editSwitch" />
         <ImageView
             android:id="@+id/delete3"
             style="@style/deleteSwitch" />
@@ -97,18 +85,15 @@
     <LinearLayout
         android:id="@+id/layout4"
         style="@style/weekSwitch"
-        android:visibility="visible" >
+        android:visibility="gone" >
         <ImageView
             android:id="@+id/icon4"
             style="@style/iconSwitch"
-            android:src="@drawable/day" />
+            android:src="@drawable/sun" />
         <TextView
             android:id="@+id/time4"
             style="@style/textSwitch"
             android:text="00:00" />
-        <ImageView
-            android:id="@+id/edit4"
-            style="@style/editSwitch" />
         <ImageView
             android:id="@+id/delete4"
             style="@style/deleteSwitch" />
@@ -116,18 +101,15 @@
     <LinearLayout
         android:id="@+id/layout5"
         style="@style/weekSwitch"
-        android:visibility="visible" >
+        android:visibility="gone" >
         <ImageView
             android:id="@+id/icon5"
             style="@style/iconSwitch"
-            android:src="@drawable/day" />
+            android:src="@drawable/sun" />
         <TextView
             android:id="@+id/time5"
             style="@style/textSwitch"
             android:text="00:00" />
-        <ImageView
-            android:id="@+id/edit5"
-            style="@style/editSwitch" />
         <ImageView
             android:id="@+id/delete5"
             style="@style/deleteSwitch" />
@@ -135,18 +117,15 @@
     <LinearLayout
         android:id="@+id/layout6"
         style="@style/weekSwitch"
-        android:visibility="visible" >
+        android:visibility="gone" >
         <ImageView
             android:id="@+id/icon6"
             style="@style/iconSwitch"
-            android:src="@drawable/day" />
+            android:src="@drawable/sun" />
         <TextView
             android:id="@+id/time6"
             style="@style/textSwitch"
             android:text="00:00" />
-        <ImageView
-            android:id="@+id/edit6"
-            style="@style/editSwitch" />
         <ImageView
             android:id="@+id/delete6"
             style="@style/deleteSwitch" />
@@ -154,18 +133,15 @@
     <LinearLayout
         android:id="@+id/layout7"
         style="@style/weekSwitch"
-        android:visibility="visible" >
+        android:visibility="gone" >
         <ImageView
             android:id="@+id/icon7"
             style="@style/iconSwitch"
-            android:src="@drawable/day" />
+            android:src="@drawable/sun" />
         <TextView
             android:id="@+id/time7"
             style="@style/textSwitch"
             android:text="00:00" />
-        <ImageView
-            android:id="@+id/edit7"
-            style="@style/editSwitch" />
         <ImageView
             android:id="@+id/delete7"
             style="@style/deleteSwitch" />
@@ -173,18 +149,15 @@
     <LinearLayout
         android:id="@+id/layout8"
         style="@style/weekSwitch"
-        android:visibility="visible" >
+        android:visibility="gone" >
         <ImageView
             android:id="@+id/icon8"
             style="@style/iconSwitch"
-            android:src="@drawable/day" />
+            android:src="@drawable/sun" />
         <TextView
             android:id="@+id/time8"
             style="@style/textSwitch"
             android:text="00:00" />
-        <ImageView
-            android:id="@+id/edit8"
-            style="@style/editSwitch" />
         <ImageView
             android:id="@+id/delete8"
             style="@style/deleteSwitch" />
@@ -196,14 +169,11 @@
         <ImageView
             android:id="@+id/icon9"
             style="@style/iconSwitch"
-            android:src="@drawable/day" />
+            android:src="@drawable/sun" />
         <TextView
             android:id="@+id/time9"
             style="@style/textSwitch"
             android:text="00:00" />
-        <ImageView
-            android:id="@+id/edit9"
-            style="@style/editSwitch" />
         <ImageView
             android:id="@+id/delete9"
             style="@style/deleteSwitch" />

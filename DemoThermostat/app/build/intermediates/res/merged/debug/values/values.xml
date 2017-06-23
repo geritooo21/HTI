@@ -119,6 +119,7 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
+    <color name="dark">#0D4D4D</color>
     <color name="design_bottom_navigation_shadow_color">#14000000</color>
     <color name="design_fab_shadow_end_color">@android:color/transparent</color>
     <color name="design_fab_shadow_mid_color">#14000000</color>
@@ -138,6 +139,7 @@
     <color name="foreground_material_light">@android:color/black</color>
     <color name="highlighted_text_material_dark">#6680cbc4</color>
     <color name="highlighted_text_material_light">#66009688</color>
+    <color name="light">#407F7F</color>
     <color name="material_blue_grey_800">#ff37474f</color>
     <color name="material_blue_grey_900">#ff263238</color>
     <color name="material_blue_grey_950">#ff21272b</color>
@@ -171,6 +173,7 @@
     <color name="switch_thumb_disabled_material_light">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_light">#fff1f1f1</color>
+    <color name="white">#F3F3F3</color>
     <declare-styleable name="ActionBar"><attr name="navigationMode">
             
             <enum name="normal" value="0"/>
@@ -1736,8 +1739,8 @@
         <item name="tabSelectedTextColor">?android:textColorPrimary</item>
     </style>
     <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
-        <item name="colorAccent"> #af762b </item>
-        <item name="colorControlNormal"> #666666 </item>
+        <item name="colorAccent"> @color/dark </item>
+        <item name="colorControlNormal"> @color/light </item>
     </style>
     <style name="Platform.AppCompat" parent="android:Theme">
         <item name="android:windowNoTitle">true</item>
@@ -1893,7 +1896,7 @@
     </style>
     <style name="Switch" parent="Theme.AppCompat.Light">
         <!-- active thumb & track color (30% transparency) -->
-        <item name="colorControlActivated">#0D4D4D</item>
+        <item name="colorControlActivated">@color/dark</item>
 
         <!-- inactive thumb color -->
         <item name="colorSwitchThumbNormal">#f1f1f1
@@ -2234,22 +2237,30 @@
         <item name="android:textColor"> #ffffff </item>
         <item name="android:layout_width"> 70dp </item>
     </style>
+    <style name="buttonPopUp">
+        <item name="android:layout_width"> wrap_content </item>
+        <item name="android:layout_height"> wrap_content </item>
+        <item name="android:layout_margin"> 10dp </item>
+        <item name="android:textSize"> 20dp </item>
+        <item name="android:textColor"> @color/white </item>
+        <item name="android:background"> @color/dark </item>
+    </style>
     <style name="deleteSwitch">
         <item name="android:layout_width"> 30dp </item>
         <item name="android:layout_height"> 30dp </item>
         <item name="android:layout_margin"> 5dp </item>
         <item name="android:src"> @drawable/delete </item>
     </style>
-    <style name="editSwitch">
-        <item name="android:layout_width"> 30dp </item>
-        <item name="android:layout_height"> 30dp </item>
-        <item name="android:layout_margin"> 5dp </item>
-        <item name="android:src"> @drawable/edit </item>
-    </style>
     <style name="iconSwitch">
         <item name="android:layout_width"> 30dp </item>
         <item name="android:layout_height"> 30dp </item>
         <item name="android:layout_margin"> 5dp </item>
+    </style>
+    <style name="popUp">
+        <item name="android:orientation"> vertical </item>
+        <item name="android:layout_width"> wrap_content </item>
+        <item name="android:layout_height"> wrap_content </item>
+        <item name="android:background"> @color/light </item>
     </style>
     <style name="resetSwitch">
         <item name="android:layout_width"> 30dp </item>
@@ -2262,11 +2273,11 @@
         <item name="android:layout_height"> wrap_content </item>
         <item name="android:layout_marginLeft"> 5dp </item>
         <item name="android:layout_weight"> 1 </item>
-        <item name="android:textColor"> #ffffff </item>
+        <item name="android:textColor"> @color/white </item>
         <item name="android:textSize"> 30dp </item>
     </style>
     <style name="weekSwitch">
-        <item name="android:background"> #0D4D4D </item>
+        <item name="android:background"> @color/dark </item>
         <item name="android:layout_width"> match_parent </item>
         <item name="android:layout_height"> wrap_content </item>
         <item name="android:orientation"> horizontal </item>

@@ -10,7 +10,7 @@
     android:gravity="center_horizontal"
     tools:context="nl.tue.demothermostat.ThermostatActivity"
     android:weightSum="1"
-    android:background="#407F7F">
+    android:background="@color/light">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -23,7 +23,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#407F7F"
+        android:background="@color/light"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         android:weightSum="1"
@@ -62,7 +62,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="45dp"
                     android:layout_gravity="center"
-                    android:textColor="#F3F3F3"
+                    android:textColor="@color/white"
                     android:textSize="40dp" />
 
             <TextView
@@ -70,7 +70,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:textColor="#F3F3F3"
+                android:textColor="@color/white"
                 android:textSize="25dp" />
 
             <TextView
@@ -79,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:layout_gravity="center"
-                android:textColor="#F3F3F3"
+                android:textColor="@color/white"
                 android:textSize="30dp" />
 
 
@@ -90,7 +90,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#407F7F"
+            android:background="@color/light"
             android:gravity="center_horizontal"
             android:orientation="vertical"
             android:weightSum="1"
@@ -102,7 +102,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Target Temperature"
-                android:textColor="#F3F3F3"
+                android:textColor="@color/white"
                 android:textSize="20dp" />
 
             <ImageView
@@ -116,7 +116,7 @@
                 android:id="@+id/targetTemp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#F3F3F3"
+                android:textColor="@color/white"
                 android:textSize="40dp" />
 
             <ImageView
@@ -131,15 +131,15 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0.04"
                 android:max="250"
-                android:progressTint="#F3F3F3"
-                android:thumbTint="#F3F3F3" />
+                android:progressTint="@color/white"
+                android:thumbTint="@color/white" />
 
             <Switch
                 android:id="@+id/vacMode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#F3F3F3"
-                android:shadowColor="#ffffff"
+                android:textColor="@color/white"
+                android:shadowColor="@color/white"
                 android:layout_marginTop="15dp"
                 android:text="Vacation mode"
                 android:theme="@style/Switch"/>

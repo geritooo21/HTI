@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/popUp" >
+
+    <LinearLayout
+        style="@style/weekSwitch" >
+        <ImageView
+            android:id="@+id/type"
+            style="@style/iconSwitch"
+            android:src="@drawable/sun" />
+        <TextView
+            android:id="@+id/time"
+            style="@style/textSwitch"
+            android:text="00:00" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/cancel"
+            style="@style/buttonPopUp"
+            android:layout_alignParentLeft="true"
+            android:text="Cancel" />
+        <Button
+            android:id="@+id/done"
+            style="@style/buttonPopUp"
+            android:layout_alignParentRight="true"
+            android:text="Done" />
+    </RelativeLayout>
+
+</LinearLayout>

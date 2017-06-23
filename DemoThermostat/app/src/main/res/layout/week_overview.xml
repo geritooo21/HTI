@@ -8,7 +8,7 @@
     android:gravity="center_horizontal"
     tools:context="nl.tue.demothermostat.WeekOverview"
     android:weightSum="1"
-    android:background="#407F7F">
+    android:background="@color/light" >
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"

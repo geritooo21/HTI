@@ -24,10 +24,9 @@
         <item name="android:layout_width"> 70dp </item>
     </style>
 
-
     <style name="Switch" parent="Theme.AppCompat.Light">
         <!-- active thumb & track color (30% transparency) -->
-        <item name="colorControlActivated">#0D4D4D</item>
+        <item name="colorControlActivated">@color/dark</item>
 
         <!-- inactive thumb color -->
         <item name="colorSwitchThumbNormal">#f1f1f1
@@ -38,8 +37,10 @@
         </item>
     </style>
 
+    //This is where custom styles start:
+
     <style name="weekSwitch">
-        <item name="android:background"> #0D4D4D </item>
+        <item name="android:background"> @color/dark </item>
         <item name="android:layout_width"> match_parent </item>
         <item name="android:layout_height"> wrap_content </item>
         <item name="android:orientation"> horizontal </item>
@@ -67,15 +68,8 @@
         <item name="android:layout_height"> wrap_content </item>
         <item name="android:layout_marginLeft"> 5dp </item>
         <item name="android:layout_weight"> 1 </item>
-        <item name="android:textColor"> #ffffff </item>
+        <item name="android:textColor"> @color/white </item>
         <item name="android:textSize"> 30dp </item>
-    </style>
-
-    <style name="editSwitch">
-        <item name="android:layout_width"> 30dp </item>
-        <item name="android:layout_height"> 30dp </item>
-        <item name="android:layout_margin"> 5dp </item>
-        <item name="android:src"> @drawable/edit </item>
     </style>
 
     <style name="deleteSwitch">
@@ -86,8 +80,24 @@
     </style>
 
     <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
-        <item name="colorAccent"> #af762b </item>
-        <item name="colorControlNormal"> #666666 </item>
+        <item name="colorAccent"> @color/dark </item>
+        <item name="colorControlNormal"> @color/light </item>
+    </style>
+
+    <style name="popUp">
+        <item name="android:orientation"> vertical </item>
+        <item name="android:layout_width"> wrap_content </item>
+        <item name="android:layout_height"> wrap_content </item>
+        <item name="android:background"> @color/light </item>
+    </style>
+
+    <style name="buttonPopUp">
+        <item name="android:layout_width"> wrap_content </item>
+        <item name="android:layout_height"> wrap_content </item>
+        <item name="android:layout_margin"> 10dp </item>
+        <item name="android:textSize"> 20dp </item>
+        <item name="android:textColor"> @color/white </item>
+        <item name="android:background"> @color/dark </item>
     </style>
 
 </resources>
