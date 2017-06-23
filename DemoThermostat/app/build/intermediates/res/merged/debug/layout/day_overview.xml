@@ -28,7 +28,7 @@
             android:src="@drawable/sun" />
         <TextView
             android:id="@+id/time0"
-            style="@style/textSwitch"
+            style="@style/timeSwitch"
             android:text="00:00" />
         <ImageView
             android:id="@+id/delete0"
@@ -44,7 +44,7 @@
             android:src="@drawable/sun" />
         <TextView
             android:id="@+id/time1"
-            style="@style/textSwitch"
+            style="@style/timeSwitch"
             android:text="00:00" />
         <ImageView
             android:id="@+id/delete1"
@@ -60,7 +60,7 @@
             android:src="@drawable/sun" />
         <TextView
             android:id="@+id/time2"
-            style="@style/textSwitch"
+            style="@style/timeSwitch"
             android:text="00:00" />
         <ImageView
             android:id="@+id/delete2"
@@ -76,7 +76,7 @@
             android:src="@drawable/sun" />
         <TextView
             android:id="@+id/time3"
-            style="@style/textSwitch"
+            style="@style/timeSwitch"
             android:text="00:00" />
         <ImageView
             android:id="@+id/delete3"
@@ -92,7 +92,7 @@
             android:src="@drawable/sun" />
         <TextView
             android:id="@+id/time4"
-            style="@style/textSwitch"
+            style="@style/timeSwitch"
             android:text="00:00" />
         <ImageView
             android:id="@+id/delete4"
@@ -108,7 +108,7 @@
             android:src="@drawable/sun" />
         <TextView
             android:id="@+id/time5"
-            style="@style/textSwitch"
+            style="@style/timeSwitch"
             android:text="00:00" />
         <ImageView
             android:id="@+id/delete5"
@@ -124,7 +124,7 @@
             android:src="@drawable/sun" />
         <TextView
             android:id="@+id/time6"
-            style="@style/textSwitch"
+            style="@style/timeSwitch"
             android:text="00:00" />
         <ImageView
             android:id="@+id/delete6"
@@ -140,7 +140,7 @@
             android:src="@drawable/sun" />
         <TextView
             android:id="@+id/time7"
-            style="@style/textSwitch"
+            style="@style/timeSwitch"
             android:text="00:00" />
         <ImageView
             android:id="@+id/delete7"
@@ -156,7 +156,7 @@
             android:src="@drawable/sun" />
         <TextView
             android:id="@+id/time8"
-            style="@style/textSwitch"
+            style="@style/timeSwitch"
             android:text="00:00" />
         <ImageView
             android:id="@+id/delete8"
@@ -172,7 +172,7 @@
             android:src="@drawable/sun" />
         <TextView
             android:id="@+id/time9"
-            style="@style/textSwitch"
+            style="@style/timeSwitch"
             android:text="00:00" />
         <ImageView
             android:id="@+id/delete9"
@@ -184,7 +184,7 @@
         style="@style/weekSwitch"
         android:visibility="visible" >
         <TextView
-            style="@style/textSwitch"
+            style="@style/timeSwitch"
             android:text="+ Add a Switch" />
     </LinearLayout>
 

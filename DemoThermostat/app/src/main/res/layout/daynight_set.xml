@@ -37,7 +37,7 @@
                 android:id="@+id/sun"
                 android:layout_centerHorizontal="true"
                 app:srcCompat="@drawable/sun"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_width="220dp"
                 android:layout_height="220dp" />
 
@@ -70,7 +70,7 @@
                     android:layout_marginTop="5dp"
                     android:layout_gravity="center"
                     android:textColor="@color/white"
-                    android:textSize="40dp" />
+                    android:textSize="30dp" />
 
                 <ImageView
                     android:id="@+id/minusDay"
@@ -88,6 +88,9 @@
             android:id="@+id/daySeekbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="15dp"
             android:max="250"
             android:progressTint="@color/white"
             android:thumbTint="@color/white" />
@@ -112,7 +115,7 @@
                 android:id="@+id/moon"
                 android:layout_centerHorizontal="true"
                 app:srcCompat="@drawable/moon"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_width="220dp"
                 android:layout_height="220dp" />
 
@@ -151,7 +154,7 @@
                     android:id="@+id/minusNight"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:layout_marginBottom="40dp"
+                    android:layout_marginBottom="30dp"
                     android:layout_weight=".33"
                     android:src="@drawable/minus"
                     android:layout_gravity="center"
@@ -163,6 +166,9 @@
             android:id="@+id/nightSeekbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="15dp"
             android:max="250"
             android:progressTint="@color/white"
             android:thumbTint="@color/white" />

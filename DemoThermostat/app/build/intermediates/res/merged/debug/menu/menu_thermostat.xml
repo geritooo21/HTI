@@ -3,11 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="nl.tue.demothermostat.ThermostatActivity">
     <item
-        android:id="@+id/activityThermostat"
-        android:orderInCategory="100"
-        android:title="Thermostat activity"
-        app:showAsAction="never" />
-    <item
         android:id="@+id/weekOverview"
         android:orderInCategory="100"
         android:title="Week Overview"
@@ -16,6 +11,6 @@
     <item
         android:id="@+id/setDayNight"
         android:orderInCategory="100"
-        android:title="Day/Night temperature"
+        android:title="Day/Night Temperature"
         app:showAsAction="never" />
 </menu>

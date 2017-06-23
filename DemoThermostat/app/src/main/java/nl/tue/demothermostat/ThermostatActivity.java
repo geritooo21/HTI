@@ -10,10 +10,10 @@ import android.view.MenuItem;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Switch;
+import android.os.Handler;
 
 import org.thermostatapp.util.*;
 
@@ -28,6 +28,7 @@ public class ThermostatActivity extends AppCompatActivity {
     private SeekBar seekBar;
     private Switch vacMode;
     private int target;
+    private Handler handler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +42,6 @@ public class ThermostatActivity extends AppCompatActivity {
         HeatingSystem.BASE_ADDRESS = "http://wwwis.win.tue.nl/2id40-ws/50";
         HeatingSystem.WEEK_PROGRAM_ADDRESS = HeatingSystem.BASE_ADDRESS + "/weekProgram";
 
-        RelativeLayout circleLayout = (RelativeLayout) findViewById(R.id.circleLayout);
         currTemp = (TextView) findViewById(R.id.currTemp);
         day = (TextView) findViewById(R.id.day);
         time = (TextView) findViewById(R.id.time);
@@ -52,13 +52,6 @@ public class ThermostatActivity extends AppCompatActivity {
         vacMode = (Switch) findViewById(R.id.vacMode);
 
         updateOverview();
-
-        circleLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                updateCircle();
-            }
-        });
 
         bPlus.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -138,8 +131,6 @@ public class ThermostatActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.activityThermostat:
-                return true;
             case R.id.weekOverview:
                 Intent intent = new Intent(this, WeekOverview.class);
                 startActivity(intent);
@@ -153,7 +144,24 @@ public class ThermostatActivity extends AppCompatActivity {
     }
 
     public void updateOverview() {
-        updateCircle();
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                // TODO Auto-generated method stub
+                while (true) {
+                    try {
+                        Thread.sleep(200);
+                        handler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                updateCircle();
+                            }
+                        });
+                    } catch (Exception e) {}
+                }
+            }
+        }).start();
 
         new Thread(new Runnable() {
             @Override

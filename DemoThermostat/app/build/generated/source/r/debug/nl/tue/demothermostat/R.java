@@ -3143,7 +3143,6 @@ containing a value of this type.
         public static final int action_mode_close_button=0x7f0d004a;
         public static final int action_text=0x7f0d00cd;
         public static final int actions=0x7f0d00d9;
-        public static final int activityThermostat=0x7f0d00ec;
         public static final int activity_chooser_view_content=0x7f0d004b;
         public static final int activity_thermostat=0x7f0d007a;
         public static final int add=0x7f0d0026;
@@ -3301,7 +3300,7 @@ containing a value of this type.
         public static final int search_voice_btn=0x7f0d0078;
         public static final int seekBar=0x7f0d0085;
         public static final int select_dialog_listview=0x7f0d0079;
-        public static final int setDayNight=0x7f0d00ee;
+        public static final int setDayNight=0x7f0d00ed;
         public static final int shortcut=0x7f0d0063;
         public static final int showCustom=0x7f0d001d;
         public static final int showHome=0x7f0d001e;
@@ -3358,7 +3357,7 @@ containing a value of this type.
         public static final int vacMode=0x7f0d0086;
         public static final int view_offset_helper=0x7f0d000e;
         public static final int visible=0x7f0d00ea;
-        public static final int weekOverview=0x7f0d00ed;
+        public static final int weekOverview=0x7f0d00ec;
         public static final int week_overview=0x7f0d00e2;
         public static final int withText=0x7f0d0045;
         public static final int wrap=0x7f0d0011;
@@ -3896,7 +3895,8 @@ containing a value of this type.
         public static final int popUp=0x7f090184;
         public static final int resetSwitch=0x7f090185;
         public static final int textSwitch=0x7f090186;
-        public static final int weekSwitch=0x7f090187;
+        public static final int timeSwitch=0x7f090187;
+        public static final int weekSwitch=0x7f090188;
     }
     public static final class styleable {
         /** Attributes that can be used with a ActionBar.

@@ -154,10 +154,6 @@ public class SetDayNight extends AppCompatActivity {
                 Intent intent = new Intent(this, WeekOverview.class);
                 startActivity(intent);
                 break;
-            case R.id.activityThermostat:
-                Intent intent1 = new Intent(this, ThermostatActivity.class);
-                startActivity(intent1);
-                break;
         }
         return super.onOptionsItemSelected(item);
     }

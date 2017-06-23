@@ -217,10 +217,6 @@ public class WeekOverview extends AppCompatActivity {
                 intent = new Intent(this, SetDayNight.class);
                 startActivity(intent);
                 break;
-            case R.id.activityThermostat:
-                intent = new Intent(this, ThermostatActivity.class);
-                startActivity(intent);
-                break;
         }
         return super.onOptionsItemSelected(item);
     }
