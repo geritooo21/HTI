@@ -14,7 +14,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".ThermostatActivity"
-            android:label="ThermostatActivity"
+            android:label="Thermostat Activity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,12 +29,12 @@
         </activity>
         <activity
             android:name=".DayOverview"
-            android:label="Monday"
+            android:label="Day Overview"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
             android:name=".SetDayNight"
-            android:label="Day/Night temperature"
+            android:label="Day/Night Temperature"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
 

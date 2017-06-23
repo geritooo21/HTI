@@ -46,7 +46,7 @@ MERGED from [com.android.support:support-compat:25.3.1] C:\Users\s168239\.androi
 activity#nl.tue.demothermostat.ThermostatActivity
 ADDED from C:\Users\s168239\Desktop\DemoThermostat\app\src\main\AndroidManifest.xml:15:9-24:20
 	android:label
-		ADDED from C:\Users\s168239\Desktop\DemoThermostat\app\src\main\AndroidManifest.xml:17:13-47
+		ADDED from C:\Users\s168239\Desktop\DemoThermostat\app\src\main\AndroidManifest.xml:17:13-48
 	android:theme
 		ADDED from C:\Users\s168239\Desktop\DemoThermostat\app\src\main\AndroidManifest.xml:18:13-56
 	android:name
@@ -72,7 +72,7 @@ ADDED from C:\Users\s168239\Desktop\DemoThermostat\app\src\main\AndroidManifest.
 activity#nl.tue.demothermostat.DayOverview
 ADDED from C:\Users\s168239\Desktop\DemoThermostat\app\src\main\AndroidManifest.xml:30:9-34:20
 	android:label
-		ADDED from C:\Users\s168239\Desktop\DemoThermostat\app\src\main\AndroidManifest.xml:32:13-35
+		ADDED from C:\Users\s168239\Desktop\DemoThermostat\app\src\main\AndroidManifest.xml:32:13-41
 	android:theme
 		ADDED from C:\Users\s168239\Desktop\DemoThermostat\app\src\main\AndroidManifest.xml:33:13-56
 	android:name

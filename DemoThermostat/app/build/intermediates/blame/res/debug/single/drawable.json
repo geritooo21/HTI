@@ -108,6 +108,10 @@
         "source": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\src\\main\\res\\drawable\\edit.png"
     },
     {
+        "merged": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\reset_week.png",
+        "source": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\src\\main\\res\\drawable\\reset_week.png"
+    },
+    {
         "merged": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\delete.png",
         "source": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\src\\main\\res\\drawable\\delete.png"
     },
@@ -140,10 +144,6 @@
         "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\drawable\\abc_seekbar_tick_mark_material.xml"
     },
     {
-        "merged": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\reset.png",
-        "source": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\src\\main\\res\\drawable\\reset.png"
-    },
-    {
         "merged": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\homeicon.png",
         "source": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\src\\main\\res\\drawable\\homeicon.png"
     },
@@ -154,6 +154,10 @@
     {
         "merged": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\moon.png",
         "source": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\src\\main\\res\\drawable\\moon.png"
+    },
+    {
+        "merged": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\reset_day.png",
+        "source": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\src\\main\\res\\drawable\\reset_day.png"
     },
     {
         "merged": "C:\\Users\\s168239\\Desktop\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\notification_icon_background.xml",

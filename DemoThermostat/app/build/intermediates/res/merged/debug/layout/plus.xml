@@ -15,7 +15,7 @@
             android:src="@drawable/day" />
         <TextView
             android:id="@+id/time"
-            style="@style/timeSwitch"
+            style="@style/textSwitch"
             android:text="00:00" />
     </LinearLayout>
 

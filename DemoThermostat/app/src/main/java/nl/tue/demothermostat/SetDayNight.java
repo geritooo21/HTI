@@ -29,12 +29,18 @@ public class SetDayNight extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.daynight_set);
-        Toolbar toolbar3 = (Toolbar) findViewById(R.id.toolbar3);
-        setSupportActionBar(toolbar3);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        toolbar3.setNavigationIcon(R.drawable.homeicon);
+        toolbar.setNavigationIcon(R.drawable.homeicon);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(v.getContext(), ThermostatActivity.class));
+            }
+        });
 
         activityLayout = (LinearLayout) findViewById(R.id.daynight_set);
 
@@ -51,13 +57,6 @@ public class SetDayNight extends AppCompatActivity {
         nightSeekbar = (SeekBar) findViewById(R.id.nightSeekbar);
 
         updateOverview();
-
-        toolbar3.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(v.getContext(), ThermostatActivity.class));
-            }
-        });
 
         dayPlus.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,9 +1,13 @@
 package nl.tue.demothermostat;
 
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -33,8 +37,6 @@ public class DayOverview extends AppCompatActivity {
     private ImageView[] edit = new ImageView[10];
     private ImageView[] delete = new ImageView[10];
 
-    private ImageView plus, reset;
-
     private boolean editType, plusType; //day = true, night = false
     private int editHour, editMinute;
 
@@ -42,6 +44,19 @@ public class DayOverview extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.day_overview);
+        setTitle(WeekProgram.valid_days[dayNumber] + " Overview");
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationIcon(R.drawable.homeicon);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(v.getContext(), ThermostatActivity.class));
+            }
+        });
 
         activityLayout = (LinearLayout) findViewById(R.id.day_overview);
 
@@ -277,7 +292,7 @@ public class DayOverview extends AppCompatActivity {
             });
         }
 
-        plus = (ImageView) findViewById(R.id.plus);
+        LinearLayout plus = (LinearLayout) findViewById(R.id.plus);
         plus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -400,77 +415,32 @@ public class DayOverview extends AppCompatActivity {
                     });
             }
         });
+    }
 
-        reset = (ImageView) findViewById(R.id.reset);
-        reset.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_thermostat, menu);
+        return true;
+    }
 
-                AlertDialog.Builder menuBuilder = new AlertDialog.Builder(DayOverview.this);
-                View menuView = getLayoutInflater().inflate(R.layout.reset, null);
-
-                final Button cancel = (Button) menuView.findViewById(R.id.cancel);
-                final Button reset = (Button) menuView.findViewById(R.id.reset);
-
-                menuBuilder.setView(menuView);
-                final AlertDialog dialog = menuBuilder.create();
-                dialog.show();
-
-                cancel.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Toast.makeText(DayOverview.this, R.string.cancel, Toast.LENGTH_SHORT).show();
-                        dialog.dismiss();
-                    }
-                });
-
-                reset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        new Thread(new Runnable() {
-                            @Override
-                            public void run() {
-                                try {
-                                    WeekProgram wpg = HeatingSystem.getWeekProgram();
-
-                                    wpg.data.put(wpg.valid_days[dayNumber], new ArrayList<Switch>());
-                                    wpg.data.get(wpg.valid_days[dayNumber]).add(new Switch("night", false, "00:00"));
-                                    wpg.data.get(wpg.valid_days[dayNumber]).add(new Switch("night", false, "00:00"));
-                                    wpg.data.get(wpg.valid_days[dayNumber]).add(new Switch("night", false, "00:00"));
-                                    wpg.data.get(wpg.valid_days[dayNumber]).add(new Switch("night", false, "00:00"));
-                                    wpg.data.get(wpg.valid_days[dayNumber]).add(new Switch("night", false, "00:00"));
-                                    wpg.data.get(wpg.valid_days[dayNumber]).add(new Switch("day", false, "00:00"));
-                                    wpg.data.get(wpg.valid_days[dayNumber]).add(new Switch("day", false, "00:00"));
-                                    wpg.data.get(wpg.valid_days[dayNumber]).add(new Switch("day", false, "00:00"));
-                                    wpg.data.get(wpg.valid_days[dayNumber]).add(new Switch("day", false, "00:00"));
-                                    wpg.data.get(wpg.valid_days[dayNumber]).add(new Switch("day", false, "00:00"));
-
-                                    HeatingSystem.setWeekProgram(wpg);
-
-                                    createDayOverview();
-
-                                    activityLayout.post(new Runnable() {
-                                        @Override
-                                        public void run() {
-                                            Toast.makeText(DayOverview.this, R.string.reset, Toast.LENGTH_SHORT).show();
-                                        }
-                                    });
-                                } catch (Exception e) {
-                                    activityLayout.post(new Runnable() {
-                                        @Override
-                                        public void run() {
-                                            Toast.makeText(DayOverview.this, R.string.cancel, Toast.LENGTH_SHORT).show();
-                                        }
-                                    });
-                                }
-                            }
-                        }).start();
-
-                        dialog.dismiss();
-                    }
-                });
-            }
-        });
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent;
+        switch (item.getItemId()) {
+            case R.id.weekOverview:
+                intent = new Intent(this, WeekOverview.class);
+                startActivity(intent);
+                break;
+            case R.id.setDayNight:
+                intent = new Intent(this, SetDayNight.class);
+                startActivity(intent);
+                break;
+            case R.id.activityThermostat:
+                intent = new Intent(this, ThermostatActivity.class);
+                startActivity(intent);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public void update() {

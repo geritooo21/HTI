@@ -8,19 +8,27 @@
     android:gravity="center_horizontal"
     tools:context="nl.tue.demothermostat.DayOverview"
     android:weightSum="1"
-    android:background="#000000" >
+    android:background="#407F7F">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#226666"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme" />
 
     <LinearLayout
         android:id="@+id/layout0"
         style="@style/weekSwitch"
-        android:visibility="gone" >
+        android:visibility="visible" >
         <ImageView
             android:id="@+id/icon0"
             style="@style/iconSwitch"
             android:src="@drawable/day" />
         <TextView
             android:id="@+id/time0"
-            style="@style/timeSwitch"
+            style="@style/textSwitch"
             android:text="00:00" />
         <ImageView
             android:id="@+id/edit0"
@@ -32,14 +40,14 @@
     <LinearLayout
         android:id="@+id/layout1"
         style="@style/weekSwitch"
-        android:visibility="gone" >
+        android:visibility="visible" >
         <ImageView
             android:id="@+id/icon1"
             style="@style/iconSwitch"
             android:src="@drawable/day" />
         <TextView
             android:id="@+id/time1"
-            style="@style/timeSwitch"
+            style="@style/textSwitch"
             android:text="00:00" />
         <ImageView
             android:id="@+id/edit1"
@@ -51,14 +59,14 @@
     <LinearLayout
         android:id="@+id/layout2"
         style="@style/weekSwitch"
-        android:visibility="gone" >
+        android:visibility="visible" >
         <ImageView
             android:id="@+id/icon2"
             style="@style/iconSwitch"
             android:src="@drawable/day" />
         <TextView
             android:id="@+id/time2"
-            style="@style/timeSwitch"
+            style="@style/textSwitch"
             android:text="00:00" />
         <ImageView
             android:id="@+id/edit2"
@@ -70,14 +78,14 @@
     <LinearLayout
         android:id="@+id/layout3"
         style="@style/weekSwitch"
-        android:visibility="gone" >
+        android:visibility="visible" >
         <ImageView
             android:id="@+id/icon3"
             style="@style/iconSwitch"
             android:src="@drawable/day" />
         <TextView
             android:id="@+id/time3"
-            style="@style/timeSwitch"
+            style="@style/textSwitch"
             android:text="00:00" />
         <ImageView
             android:id="@+id/edit3"
@@ -89,14 +97,14 @@
     <LinearLayout
         android:id="@+id/layout4"
         style="@style/weekSwitch"
-        android:visibility="gone" >
+        android:visibility="visible" >
         <ImageView
             android:id="@+id/icon4"
             style="@style/iconSwitch"
             android:src="@drawable/day" />
         <TextView
             android:id="@+id/time4"
-            style="@style/timeSwitch"
+            style="@style/textSwitch"
             android:text="00:00" />
         <ImageView
             android:id="@+id/edit4"
@@ -108,14 +116,14 @@
     <LinearLayout
         android:id="@+id/layout5"
         style="@style/weekSwitch"
-        android:visibility="gone" >
+        android:visibility="visible" >
         <ImageView
             android:id="@+id/icon5"
             style="@style/iconSwitch"
             android:src="@drawable/day" />
         <TextView
             android:id="@+id/time5"
-            style="@style/timeSwitch"
+            style="@style/textSwitch"
             android:text="00:00" />
         <ImageView
             android:id="@+id/edit5"
@@ -127,14 +135,14 @@
     <LinearLayout
         android:id="@+id/layout6"
         style="@style/weekSwitch"
-        android:visibility="gone" >
+        android:visibility="visible" >
         <ImageView
             android:id="@+id/icon6"
             style="@style/iconSwitch"
             android:src="@drawable/day" />
         <TextView
             android:id="@+id/time6"
-            style="@style/timeSwitch"
+            style="@style/textSwitch"
             android:text="00:00" />
         <ImageView
             android:id="@+id/edit6"
@@ -146,14 +154,14 @@
     <LinearLayout
         android:id="@+id/layout7"
         style="@style/weekSwitch"
-        android:visibility="gone" >
+        android:visibility="visible" >
         <ImageView
             android:id="@+id/icon7"
             style="@style/iconSwitch"
             android:src="@drawable/day" />
         <TextView
             android:id="@+id/time7"
-            style="@style/timeSwitch"
+            style="@style/textSwitch"
             android:text="00:00" />
         <ImageView
             android:id="@+id/edit7"
@@ -165,14 +173,14 @@
     <LinearLayout
         android:id="@+id/layout8"
         style="@style/weekSwitch"
-        android:visibility="gone" >
+        android:visibility="visible" >
         <ImageView
             android:id="@+id/icon8"
             style="@style/iconSwitch"
             android:src="@drawable/day" />
         <TextView
             android:id="@+id/time8"
-            style="@style/timeSwitch"
+            style="@style/textSwitch"
             android:text="00:00" />
         <ImageView
             android:id="@+id/edit8"
@@ -191,7 +199,7 @@
             android:src="@drawable/day" />
         <TextView
             android:id="@+id/time9"
-            style="@style/timeSwitch"
+            style="@style/textSwitch"
             android:text="00:00" />
         <ImageView
             android:id="@+id/edit9"
@@ -201,27 +209,13 @@
             style="@style/deleteSwitch" />
     </LinearLayout>
 
-    <RelativeLayout
-        android:layout_width="120dp"
-        android:layout_height="match_parent"
-        android:layout_alignParentBottom="true">
-
-        <ImageView
-            android:id="@+id/plus"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:src="@drawable/plus2"
-            android:layout_alignParentBottom="true"/>
-
-        <ImageView
-            android:id="@+id/reset"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:src="@drawable/reset"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true" />
-    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/plus"
+        style="@style/weekSwitch"
+        android:visibility="visible" >
+        <TextView
+            style="@style/textSwitch"
+            android:text="+ Add a Switch" />
+    </LinearLayout>
 
 </LinearLayout>
