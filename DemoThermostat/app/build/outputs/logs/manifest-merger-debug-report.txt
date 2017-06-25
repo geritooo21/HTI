@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:2:1-42:12
+ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:2:1-47:12
 	package
 		ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:3:5-36
 		INJECTED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml
@@ -18,7 +18,7 @@ ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\And
 	android:name
 		ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:5:22-64
 application
-ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:8:5-40:19
+ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:8:5-45:19
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\s168239\.android\build-cache\7b57f7b02029cb68905e6e14fc29c9ae4d10596e\output\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:design:25.3.1] C:\Users\s168239\.android\build-cache\a51330cb48925fb97599313b01ad2efd9f08ee40\output\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\s168239\.android\build-cache\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\output\AndroidManifest.xml:29:5-20
@@ -83,6 +83,14 @@ ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\And
 		ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:37:13-56
 	android:name
 		ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:35:13-40
+activity#nl.tue.demothermostat.SecretSettings
+ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:39:9-43:20
+	android:label
+		ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:41:13-44
+	android:theme
+		ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:42:13-56
+	android:name
+		ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:40:13-43
 uses-sdk
 INJECTED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\s168239\.android\build-cache\7b57f7b02029cb68905e6e14fc29c9ae4d10596e\output\AndroidManifest.xml:5:5-7:41

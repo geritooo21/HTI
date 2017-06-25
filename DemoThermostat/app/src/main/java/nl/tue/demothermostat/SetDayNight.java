@@ -26,6 +26,7 @@ public class SetDayNight extends AppCompatActivity {
     private SeekBar daySeekbar, nightSeekbar;
     private int day, night;
     private Handler handler = new Handler();
+    private boolean thread = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,7 @@ public class SetDayNight extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                thread = false;
                 startActivity(new Intent(v.getContext(), ThermostatActivity.class));
             }
         });
@@ -58,24 +60,7 @@ public class SetDayNight extends AppCompatActivity {
         daySeekbar = (SeekBar) findViewById(R.id.daySeekbar);
         nightSeekbar = (SeekBar) findViewById(R.id.nightSeekbar);
 
-        updateOverview();
-
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while (true) {
-                    try {
-                        Thread.sleep(1000);
-                        handler.post(new Runnable() {
-                            @Override
-                            public void run() {
-                                updateOverview();
-                            }
-                        });
-                    } catch (Exception e) {}
-                }
-            }
-        }).start();
+        update();
 
         dayPlus.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -159,6 +144,18 @@ public class SetDayNight extends AppCompatActivity {
     }
 
     @Override
+    public void onResume() {
+        updater();
+        super.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        thread = false;
+        super.onPause();
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_thermostat, menu);
         return true;
@@ -170,14 +167,14 @@ public class SetDayNight extends AppCompatActivity {
             case R.id.setDayNight:
                 return true;
             case R.id.weekOverview:
-                Intent intent = new Intent(this, WeekOverview.class);
-                startActivity(intent);
+                //thread = false;
+                startActivity(new Intent(this, WeekOverview.class));
                 break;
         }
         return super.onOptionsItemSelected(item);
     }
 
-    public void updateOverview() {
+    public void update() {
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -207,6 +204,26 @@ public class SetDayNight extends AppCompatActivity {
                     });
                 } catch (Exception e) {
                     System.err.println("Error from getdata " + e);
+                }
+            }
+        }).start();
+    }
+
+    public void updater() {
+        thread = true;
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (thread) {
+                    try {
+                        Thread.sleep(4000);
+                        handler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                update();
+                            }
+                        });
+                    } catch (Exception e) {}
                 }
             }
         }).start();

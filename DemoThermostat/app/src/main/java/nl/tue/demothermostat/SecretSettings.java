@@ -1,5 +1,6 @@
 package nl.tue.demothermostat;
 
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -8,10 +9,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
-import android.widget.SeekBar;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.TimePicker;
 
 import org.thermostatapp.util.*;
 
@@ -22,140 +25,91 @@ import org.thermostatapp.util.*;
 public class SecretSettings extends AppCompatActivity {
 
     private LinearLayout activityLayout;
-    private TextView dayTemp, nightTemp;
-    private SeekBar daySeekbar, nightSeekbar;
-    private int day, night;
     private Handler handler = new Handler();
+    private boolean thread;
+    private Spinner spinner;
+    private TextView time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.daynight_set);
+        setContentView(R.layout.settings_secret);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        toolbar.setNavigationIcon(R.drawable.homeicon);
+        toolbar.setNavigationIcon(R.drawable.homeiconsecret);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //thread = false;
                 startActivity(new Intent(v.getContext(), ThermostatActivity.class));
             }
         });
 
-        activityLayout = (LinearLayout) findViewById(R.id.daynight_set);
+        activityLayout = (LinearLayout) findViewById(R.id.settings_secret);
 
         HeatingSystem.BASE_ADDRESS = "http://wwwis.win.tue.nl/2id40-ws/50";
         HeatingSystem.WEEK_PROGRAM_ADDRESS = HeatingSystem.BASE_ADDRESS + "/weekProgram";
 
-        ImageView dayPlus = (ImageView) findViewById(R.id.plusDay);
-        ImageView dayMinus = (ImageView) findViewById(R.id.minusDay);
-        ImageView nightPlus = (ImageView) findViewById(R.id.plusNight);
-        ImageView nightMinus = (ImageView) findViewById(R.id.minusNight);
-        dayTemp = (TextView) findViewById(R.id.dayTemp);
-        nightTemp = (TextView) findViewById(R.id.nightTemp);
-        daySeekbar = (SeekBar) findViewById(R.id.daySeekbar);
-        nightSeekbar = (SeekBar) findViewById(R.id.nightSeekbar);
+        time = (TextView) findViewById(R.id.time);
 
-        updateOverview();
+        spinner = (Spinner) findViewById(R.id.spinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.week_days, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
 
-        new Thread(new Runnable() {
+        update();
+
+        time.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void run() {
-                while (true) {
-                    try {
-                        Thread.sleep(1000);
-                        handler.post(new Runnable() {
-                            @Override
-                            public void run() {
-                                updateOverview();
-                            }
-                        });
-                    } catch (Exception e) {}
-                }
-            }
-        }).start();
+            public void onClick(View view){
+                final int editHour = Integer.parseInt(time.getText().toString().substring(0, 2));
+                final int editMinute = Integer.parseInt(time.getText().toString().substring(3, 5));
 
-        dayPlus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (day < 300) {
-                    day++;
-                    setDayText();
-                    daySeekbar.setProgress(day-50);
-                    uploadDayOnServer();
-                }
+                TimePickerDialog timePicker;
+                timePicker = new TimePickerDialog(SecretSettings.this, R.style.DialogThemeSecret, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
+                        String selection = selectedHour + ":" + selectedMinute;
+                        if (selectedMinute < 10 && selectedHour < 10) {
+                            selection = "0" + selectedHour + ":0" + selectedMinute;
+                        } else if (selectedMinute < 10) {
+                            selection = selectedHour + ":0" + selectedMinute;
+                        } else if (selectedHour < 10) {
+                            selection = "0" + selectedHour + ":" + selectedMinute;
+                        }
+                        time.setText(selection);
+                        uploadTimeOnServer();
+                    }
+                }, editHour, editMinute, true);
+                timePicker.setTitle("Select Time");
+                timePicker.show();
             }
         });
 
-        dayMinus.setOnClickListener(new View.OnClickListener() {
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onClick(View view) {
-                if (day >50) {
-                    day--;
-                    setDayText();
-                    daySeekbar.setProgress(day-50);
-                    uploadDayOnServer();
-                }
-            }
-        });
-
-        daySeekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                day = progress + 50;
-                setDayText();
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {}
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 uploadDayOnServer();
             }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {}
         });
+    }
 
-        nightPlus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (night < 300) {
-                    night++;
-                    setNightText();
-                    nightSeekbar.setProgress(night-50);
-                    uploadNightOnServer();
-                }
-            }
-        });
+    @Override
+    public void onResume() {
+        updater();
+        super.onResume();
+    }
 
-        nightMinus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (night > 50) {
-                    night--;
-                    setNightText();
-                    nightSeekbar.setProgress(night-50);
-                    uploadNightOnServer();
-                }
-            }
-        });
-
-        nightSeekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                night = progress + 50;
-                setNightText();
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {}
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-                uploadNightOnServer();
-            }
-        });
+    @Override
+    public void onPause() {
+        thread = false;
+        super.onPause();
     }
 
     @Override
@@ -168,41 +122,37 @@ public class SecretSettings extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.setDayNight:
-                return true;
+                //thread = false;
+                startActivity(new Intent(this, SetDayNight.class));
+                break;
             case R.id.weekOverview:
-                Intent intent = new Intent(this, WeekOverview.class);
-                startActivity(intent);
+                //thread = false;
+                startActivity(new Intent(this, WeekOverview.class));
                 break;
         }
         return super.onOptionsItemSelected(item);
     }
 
-    public void updateOverview() {
+    public void update() {
         new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
-                    final String dayTempString = HeatingSystem.get("dayTemperature");
-                    try {
-                        day = Integer.parseInt(dayTempString.substring(0, 2) + dayTempString.substring(3, 4));
-                    } catch (Exception e) {
-                        day = Integer.parseInt(dayTempString.substring(0, 1) + dayTempString.substring(2, 3));
+                    final String currentTime = HeatingSystem.get("time");
+                    String day = HeatingSystem.get("day");
+                    int index = 0;
+                    for (int i = 0; i < WeekProgram.valid_days.length; i++) {
+                        if (WeekProgram.valid_days[i].equals(day)) {
+                            index = i;
+                        }
                     }
-
-                    final String nightTempString = HeatingSystem.get("nightTemperature");
-                    try {
-                        night = Integer.parseInt(nightTempString.substring(0, 2) + nightTempString.substring(3, 4));
-                    } catch (Exception e) {
-                        night = Integer.parseInt(nightTempString.substring(0, 1) + nightTempString.substring(2, 3));
-                    }
+                    final int dayIndex = index;
 
                     activityLayout.post(new Runnable() {
                         @Override
                         public void run() {
-                            dayTemp.setText(dayTempString + "\u2103");
-                            daySeekbar.setProgress(day - 50);
-                            nightTemp.setText(nightTempString + "\u2103");
-                            nightSeekbar.setProgress(night - 50);
+                            time.setText(currentTime);
+                            spinner.setSelection(dayIndex);
                         }
                     });
                 } catch (Exception e) {
@@ -212,20 +162,25 @@ public class SecretSettings extends AppCompatActivity {
         }).start();
     }
 
-    public void setDayText() {
-        if (day < 100) {
-            dayTemp.setText(Integer.toString(day).substring(0,1) + "." + Integer.toString(day).substring(1,2) + "\u2103");
-        } else {
-            dayTemp.setText(Integer.toString(day).substring(0,2) + "." + Integer.toString(day).substring(2,3) + "\u2103");
-        }
-    }
-
-    public void setNightText() {
-        if (night < 100) {
-            nightTemp.setText(Integer.toString(night).substring(0,1) + "." + Integer.toString(night).substring(1,2) + "\u2103");
-        } else {
-            nightTemp.setText(Integer.toString(night).substring(0,2) + "." + Integer.toString(night).substring(2,3) + "\u2103");
-        }
+    public void updater() {
+        thread = true;
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (thread) {
+                    try {
+                        Thread.sleep(2000);
+                        handler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                update();
+                            }
+                        });
+                    } catch (Exception e) {
+                    }
+                }
+            }
+        }).start();
     }
 
     public void uploadDayOnServer() {
@@ -233,11 +188,7 @@ public class SecretSettings extends AppCompatActivity {
             @Override
             public void run() {
                 try {
-                    if (day < 100) {
-                        HeatingSystem.put("dayTemperature", Integer.toString(day).substring(0, 1) + "." + Integer.toString(day).substring(1, 2));
-                    } else {
-                        HeatingSystem.put("dayTemperature", Integer.toString(day).substring(0, 2) + "." + Integer.toString(day).substring(2, 3));
-                    }
+                    HeatingSystem.put("day", spinner.getSelectedItem().toString());
                 } catch (Exception e) {
                     System.err.println("Error from getdata " + e);
                 }
@@ -245,16 +196,12 @@ public class SecretSettings extends AppCompatActivity {
         }).start();
     }
 
-    public void uploadNightOnServer() {
+    public void uploadTimeOnServer() {
         new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
-                    if (night < 100) {
-                        HeatingSystem.put("nightTemperature", Integer.toString(night).substring(0, 1) + "." + Integer.toString(night).substring(1, 2));
-                    } else {
-                        HeatingSystem.put("nightTemperature", Integer.toString(night).substring(0, 2) + "." + Integer.toString(night).substring(2, 3));
-                    }
+                    HeatingSystem.put("time", time.getText().toString());
                 } catch (Exception e) {
                     System.err.println("Error from getdata " + e);
                 }

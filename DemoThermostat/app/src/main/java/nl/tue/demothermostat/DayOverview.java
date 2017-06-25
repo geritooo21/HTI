@@ -41,6 +41,7 @@ public class DayOverview extends AppCompatActivity {
     private int editHour, editMinute;
 
     private Handler handler = new Handler();
+    private boolean thread = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +57,7 @@ public class DayOverview extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                thread = false;
                 startActivity(new Intent(v.getContext(), ThermostatActivity.class));
             }
         });
@@ -82,23 +84,6 @@ public class DayOverview extends AppCompatActivity {
         }
 
         update();
-
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while (true) {
-                    try {
-                        Thread.sleep(2000);
-                        handler.post(new Runnable() {
-                            @Override
-                            public void run() {
-                                update();
-                            }
-                        });
-                    } catch (Exception e) {}
-                }
-            }
-        }).start();
 
         for (int i = 0; i < layout.length; i++) {
             final int j = i;
@@ -412,6 +397,18 @@ public class DayOverview extends AppCompatActivity {
     }
 
     @Override
+    public void onResume() {
+        updater();
+        super.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        thread = false;
+        super.onPause();
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_thermostat, menu);
         return true;
@@ -419,15 +416,14 @@ public class DayOverview extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Intent intent;
         switch (item.getItemId()) {
             case R.id.weekOverview:
-                intent = new Intent(this, WeekOverview.class);
-                startActivity(intent);
+                thread = false;
+                startActivity(new Intent(this, WeekOverview.class));
                 break;
             case R.id.setDayNight:
-                intent = new Intent(this, SetDayNight.class);
-                startActivity(intent);
+                thread = false;
+                startActivity(new Intent(this, SetDayNight.class));
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -468,6 +464,26 @@ public class DayOverview extends AppCompatActivity {
                             Toast.makeText(DayOverview.this, R.string.errorFromServer, Toast.LENGTH_SHORT).show();
                         }
                     });
+                }
+            }
+        }).start();
+    }
+
+    public void updater() {
+        thread = true;
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (thread) {
+                    try {
+                        Thread.sleep(8000);
+                        handler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                update();
+                            }
+                        });
+                    } catch (Exception e) {}
                 }
             }
         }).start();

@@ -10,6 +10,10 @@
     <color name="light">#407F7F</color>
     <color name="white">#F3F3F3</color>
 
+    <color name="darkSecret">#550000</color>
+    <color name="lightSecret">#AA3939</color>
+    <color name="toolbarSecret">#801515</color>
+
     <color name="toolbar">#226666</color>
     <color name="sun">#D4A66A</color>
     <color name="moon">#336699</color>

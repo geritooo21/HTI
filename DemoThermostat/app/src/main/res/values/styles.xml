@@ -39,6 +39,16 @@
 
     //This is where custom styles start:
 
+    <string-array name="week_days">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
+    </string-array>
+
     <style name="weekSwitch">
         <item name="android:background"> @color/dark </item>
         <item name="android:layout_width"> match_parent </item>
@@ -91,6 +101,11 @@
     <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
         <item name="colorAccent"> @color/dark </item>
         <item name="colorControlNormal"> @color/light </item>
+    </style>
+
+    <style name="DialogThemeSecret" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent"> @color/darkSecret </item>
+        <item name="colorControlNormal"> @color/lightSecret </item>
     </style>
 
     <style name="popUp">

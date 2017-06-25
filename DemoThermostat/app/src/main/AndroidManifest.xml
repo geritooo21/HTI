@@ -38,7 +38,7 @@
         </activity>
         <activity
             android:name=".SecretSettings"
-            android:label="Day/Secret Settings"
+            android:label="Secret Settings"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
 

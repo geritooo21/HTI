@@ -29,8 +29,8 @@ public class ThermostatActivity extends AppCompatActivity {
     private SeekBar seekBar;
     private Switch vacMode;
     private int target;
-    private Handler handler200 = new Handler();
-    private Handler handler1000 = new Handler();
+    private Handler handler = new Handler();
+    private boolean thread = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,48 +54,20 @@ public class ThermostatActivity extends AppCompatActivity {
         seekBar = (SeekBar) findViewById(R.id.seekBar);
         vacMode = (Switch) findViewById(R.id.vacMode);
 
-        updateCircle();
-        updateOverview();
+        update();
 
-        new Thread(new Runnable() {
+        circle.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void run() {
-                while (true) {
-                    try {
-                        Thread.sleep(200);
-                        handler200.post(new Runnable() {
-                            @Override
-                            public void run() {
-                                updateCircle();
-                            }
-                        });
-                    } catch (Exception e) {}
-                }
+            public void onClick(View view) {
+                update();
             }
-        }).start();
-
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                while (true) {
-                    try {
-                        Thread.sleep(1000);
-                        handler1000.post(new Runnable() {
-                            @Override
-                            public void run() {
-                                updateOverview();
-                            }
-                        });
-                    } catch (Exception e) {}
-                }
-            }
-        }).start();
+        });
 
         circle.setOnLongClickListener(new OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
-                Intent intent = new Intent(view.getContext(), DayOverview.class);
-                startActivity(intent);
+                //thread = false;
+                startActivity(new Intent(view.getContext(), SecretSettings.class));
                 return true;
             }
         });
@@ -170,6 +142,18 @@ public class ThermostatActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onResume() {
+        updater();
+        super.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        thread = false;
+        super.onPause();
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_thermostat, menu);
         return true;
@@ -179,35 +163,43 @@ public class ThermostatActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.weekOverview:
-                Intent intent = new Intent(this, WeekOverview.class);
-                startActivity(intent);
+                //thread = false;
+                startActivity(new Intent(this, WeekOverview.class));
                 break;
             case R.id.setDayNight:
-                Intent intent1 = new Intent(this, SetDayNight.class);
-                startActivity(intent1);
+                //thread = false;
+                startActivity(new Intent(this, SetDayNight.class));
                 break;
         }
         return super.onOptionsItemSelected(item);
     }
 
-    public void updateOverview() {
+    public void update() {
         new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
                     //Load all data form server
+                    final String currTempString = HeatingSystem.get("currentTemperature");
+                    final String dayString = HeatingSystem.get("day");
+                    final String timeString = HeatingSystem.get("time");
                     final String targetTempString = HeatingSystem.get("targetTemperature");
+
                     try {
                         target = Integer.parseInt(targetTempString.substring(0, 2) + targetTempString.substring(3, 4));
                     } catch (Exception e) {
                         target = Integer.parseInt(targetTempString.substring(0, 1) + targetTempString.substring(2, 3));
                     }
+
                     final String weekProgStateString = HeatingSystem.get("weekProgramState");
 
                     //Update the "View"
                     activityLayout.post(new Runnable() {
                         @Override
                         public void run() {
+                            currTemp.setText(currTempString + "\u2103");
+                            day.setText(dayString);
+                            time.setText(timeString);
                             targetTemp.setText(targetTempString + "\u2103");
 
                             seekBar.setProgress(target-50);
@@ -227,27 +219,21 @@ public class ThermostatActivity extends AppCompatActivity {
         }).start();
     }
 
-    public void updateCircle() {
+    public void updater() {
+        thread = true;
         new Thread(new Runnable() {
             @Override
             public void run() {
-                try {
-                    //Load all data form server
-                    final String currTempString = HeatingSystem.get("currentTemperature");
-                    final String dayString = HeatingSystem.get("day");
-                    final String timeString = HeatingSystem.get("time");
-
-                    //Update the "View"
-                    activityLayout.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            currTemp.setText(currTempString + "\u2103");
-                            day.setText(dayString);
-                            time.setText(timeString);
-                        }
-                    });
-                } catch (Exception e) {
-                    System.err.println("Error from getdata " + e);
+                while (thread) {
+                    try {
+                        Thread.sleep(2000);
+                        handler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                update();
+                            }
+                        });
+                    } catch (Exception e) {}
                 }
             }
         }).start();

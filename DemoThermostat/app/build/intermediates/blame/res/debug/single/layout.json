@@ -220,6 +220,10 @@
         "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\layout\\notification_template_part_time.xml"
     },
     {
+        "merged": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\layout\\settings_secret.xml",
+        "source": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\src\\main\\res\\layout\\settings_secret.xml"
+    },
+    {
         "merged": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\layout\\reset.xml",
         "source": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\src\\main\\res\\layout\\reset.xml"
     }
