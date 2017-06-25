@@ -39,6 +39,10 @@
 
     //This is where custom styles start:
 
+    <style name="SpinnerItem" parent="@android:style/Widget.TextView.SpinnerItem">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
     <string-array name="week_days">
         <item>Monday</item>
         <item>Tuesday</item>

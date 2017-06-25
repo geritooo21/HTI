@@ -389,6 +389,8 @@ public class DayOverview extends AppCompatActivity {
 
                             upload();
 
+                            Toast.makeText(DayOverview.this, R.string.add, Toast.LENGTH_SHORT).show();
+
                             dialog.dismiss();
                         }
                     });
