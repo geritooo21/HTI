@@ -428,7 +428,7 @@ public class DayOverview extends AppCompatActivity {
                     activityLayout.post(new Runnable() {
                         @Override
                         public void run() {
-                            Toast.makeText(DayOverview.this, R.string.error, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(DayOverview.this, R.string.errorFromServer, Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
@@ -447,7 +447,7 @@ public class DayOverview extends AppCompatActivity {
                     activityLayout.post(new Runnable() {
                         @Override
                         public void run() {
-                            Toast.makeText(DayOverview.this, R.string.error, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(DayOverview.this, R.string.errorToServer, Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
@@ -456,18 +456,36 @@ public class DayOverview extends AppCompatActivity {
     }
 
     public void createDayOverview() {
-        for (int i = 0; i < layout.length; i++) {
-            if (switches.get(i).getState() && switches.get(i) != null ) {
-                layout[i].setVisibility(View.VISIBLE);
-                if (switches.get(i).getType().equals("day")) {
-                    icon[i].setImageResource(R.drawable.sun);
-                } else {
-                    icon[i].setImageResource(R.drawable.moon);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    activityLayout.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            for (int i = 0; i < layout.length; i++) {
+                                if (switches.get(i).getState() && switches.get(i) != null ) {
+                                    layout[i].setVisibility(View.VISIBLE);
+                                    if (switches.get(i).getType().equals("day")) {
+                                        icon[i].setImageResource(R.drawable.sun);
+                                    } else {
+                                        icon[i].setImageResource(R.drawable.moon);
+                                    }
+                                    time[i].setText(switches.get(i).getTime());
+                                } else {
+                                    layout[i].setVisibility(View.GONE);
+                                }
+                            }                        }
+                    });
+                } catch (Exception e) {
+                    activityLayout.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(DayOverview.this, R.string.error, Toast.LENGTH_SHORT).show();
+                        }
+                    });
                 }
-                time[i].setText(switches.get(i).getTime());
-            } else {
-                layout[i].setVisibility(View.GONE);
             }
-        }
+        }).start();
     }
 }

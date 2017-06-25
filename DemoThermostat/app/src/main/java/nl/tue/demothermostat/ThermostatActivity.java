@@ -28,7 +28,8 @@ public class ThermostatActivity extends AppCompatActivity {
     private SeekBar seekBar;
     private Switch vacMode;
     private int target;
-    private Handler handler = new Handler();
+    private Handler handler200 = new Handler();
+    private Handler handler1000 = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +52,39 @@ public class ThermostatActivity extends AppCompatActivity {
         seekBar = (SeekBar) findViewById(R.id.seekBar);
         vacMode = (Switch) findViewById(R.id.vacMode);
 
-        updateOverview();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    try {
+                        Thread.sleep(200);
+                        handler200.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                updateCircle();
+                            }
+                        });
+                    } catch (Exception e) {}
+                }
+            }
+        }).start();
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    try {
+                        Thread.sleep(1000);
+                        handler1000.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                updateOverview();
+                            }
+                        });
+                    } catch (Exception e) {}
+                }
+            }
+        }).start();
 
         bPlus.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -144,25 +177,6 @@ public class ThermostatActivity extends AppCompatActivity {
     }
 
     public void updateOverview() {
-
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                // TODO Auto-generated method stub
-                while (true) {
-                    try {
-                        Thread.sleep(200);
-                        handler.post(new Runnable() {
-                            @Override
-                            public void run() {
-                                updateCircle();
-                            }
-                        });
-                    } catch (Exception e) {}
-                }
-            }
-        }).start();
-
         new Thread(new Runnable() {
             @Override
             public void run() {

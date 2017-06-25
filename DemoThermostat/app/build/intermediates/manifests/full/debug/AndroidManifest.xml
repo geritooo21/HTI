@@ -17,14 +17,13 @@ ss
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="ThermostatActivity"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:icon="@drawable/app_icon"
+        android:label="Thermostat"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity
             android:name="nl.tue.demothermostat.ThermostatActivity"
-            android:label="Thermostat Activity"
+            android:label="Thermostat"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

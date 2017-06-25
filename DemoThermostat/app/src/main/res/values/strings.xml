@@ -7,6 +7,8 @@
     <string name="delete">Deleted</string>
     <string name="edit">Changed</string>
     <string name="error">Error connecting to server!</string>
+    <string name="errorFromServer">Error loading data from  server!</string>
+    <string name="errorToServer">Error pushing data to server!</string>
     <string name="full">Max amount of switches reached!</string>
     <string name="fullDay">Max amount of Day switches reached!</string>
     <string name="fullNight">Max amount of Night switches reached!</string>
