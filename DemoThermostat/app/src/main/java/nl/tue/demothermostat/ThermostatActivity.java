@@ -14,6 +14,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Switch;
 import android.os.Handler;
+import android.view.View.OnLongClickListener;
 
 import org.thermostatapp.util.*;
 
@@ -39,6 +40,7 @@ public class ThermostatActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         activityLayout = (LinearLayout) findViewById(R.id.activity_thermostat);
+        ImageView circle = (ImageView) findViewById(R.id.circle);
 
         HeatingSystem.BASE_ADDRESS = "http://wwwis.win.tue.nl/2id40-ws/50";
         HeatingSystem.WEEK_PROGRAM_ADDRESS = HeatingSystem.BASE_ADDRESS + "/weekProgram";
@@ -88,6 +90,15 @@ public class ThermostatActivity extends AppCompatActivity {
                 }
             }
         }).start();
+
+        circle.setOnLongClickListener(new OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                Intent intent = new Intent(view.getContext(), DayOverview.class);
+                startActivity(intent);
+                return true;
+            }
+        });
 
         bPlus.setOnClickListener(new View.OnClickListener() {
             @Override
