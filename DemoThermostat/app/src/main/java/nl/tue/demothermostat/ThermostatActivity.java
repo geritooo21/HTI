@@ -52,6 +52,9 @@ public class ThermostatActivity extends AppCompatActivity {
         seekBar = (SeekBar) findViewById(R.id.seekBar);
         vacMode = (Switch) findViewById(R.id.vacMode);
 
+        updateCircle();
+        updateOverview();
+
         new Thread(new Runnable() {
             @Override
             public void run() {

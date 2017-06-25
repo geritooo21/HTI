@@ -44,7 +44,7 @@ MERGED from [com.android.support:support-compat:25.3.1] C:\Users\s168239\.androi
 activity#nl.tue.demothermostat.ThermostatActivity
 ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:14:9-23:20
 	android:label
-		ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:16:13-39
+		ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:16:13-48
 	android:theme
 		ADDED from C:\Users\s168239\Documents\GitHub\HTI\DemoThermostat\app\src\main\AndroidManifest.xml:17:13-56
 	android:name

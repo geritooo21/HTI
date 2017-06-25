@@ -3,6 +3,7 @@ package nl.tue.demothermostat;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -38,6 +39,8 @@ public class DayOverview extends AppCompatActivity {
 
     private boolean editType, plusType; //day = true, night = false
     private int editHour, editMinute;
+
+    private Handler handler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +82,23 @@ public class DayOverview extends AppCompatActivity {
         }
 
         update();
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    try {
+                        Thread.sleep(2000);
+                        handler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                update();
+                            }
+                        });
+                    } catch (Exception e) {}
+                }
+            }
+        }).start();
 
         for (int i = 0; i < layout.length; i++) {
             final int j = i;
@@ -230,7 +250,6 @@ public class DayOverview extends AppCompatActivity {
                             }
 
                             upload();
-                            createDayOverview();
 
                             Toast.makeText(DayOverview.this, R.string.edit, Toast.LENGTH_SHORT).show();
 
@@ -254,7 +273,6 @@ public class DayOverview extends AppCompatActivity {
                     switches.set(j, new Switch(switches.get(j).getType(), false, "00:00"));
 
                     upload();
-                    createDayOverview();
 
                     Toast.makeText(DayOverview.this, R.string.delete, Toast.LENGTH_SHORT).show();
                 }
@@ -385,7 +403,6 @@ public class DayOverview extends AppCompatActivity {
                             }
 
                             upload();
-                            createDayOverview();
 
                             dialog.dismiss();
                         }
@@ -416,6 +433,26 @@ public class DayOverview extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void upload() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    wpg.data.put(WeekProgram.valid_days[dayNumber], switches);
+                    HeatingSystem.setWeekProgram(wpg);
+                    update();
+                } catch (Exception e) {
+                    activityLayout.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(DayOverview.this, R.string.errorToServer, Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+            }
+        }).start();
+    }
+
     public void update() {
         new Thread(new Runnable() {
             @Override
@@ -436,25 +473,6 @@ public class DayOverview extends AppCompatActivity {
         }).start();
     }
 
-    public void upload() {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    wpg.data.put(WeekProgram.valid_days[dayNumber], switches);
-                    HeatingSystem.setWeekProgram(wpg);
-                } catch (Exception e) {
-                    activityLayout.post(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toast.makeText(DayOverview.this, R.string.errorToServer, Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                }
-            }
-        }).start();
-    }
-
     public void createDayOverview() {
         new Thread(new Runnable() {
             @Override
@@ -464,7 +482,7 @@ public class DayOverview extends AppCompatActivity {
                         @Override
                         public void run() {
                             for (int i = 0; i < layout.length; i++) {
-                                if (switches.get(i).getState() && switches.get(i) != null ) {
+                                if (switches.get(i).getState() && switches.get(i) != null) {
                                     layout[i].setVisibility(View.VISIBLE);
                                     if (switches.get(i).getType().equals("day")) {
                                         icon[i].setImageResource(R.drawable.sun);
@@ -475,7 +493,8 @@ public class DayOverview extends AppCompatActivity {
                                 } else {
                                     layout[i].setVisibility(View.GONE);
                                 }
-                            }                        }
+                            }
+                        }
                     });
                 } catch (Exception e) {
                     activityLayout.post(new Runnable() {

@@ -2,6 +2,7 @@ package nl.tue.demothermostat;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -24,6 +25,7 @@ public class SetDayNight extends AppCompatActivity {
     private TextView dayTemp, nightTemp;
     private SeekBar daySeekbar, nightSeekbar;
     private int day, night;
+    private Handler handler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,6 +59,23 @@ public class SetDayNight extends AppCompatActivity {
         nightSeekbar = (SeekBar) findViewById(R.id.nightSeekbar);
 
         updateOverview();
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true) {
+                    try {
+                        Thread.sleep(1000);
+                        handler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                updateOverview();
+                            }
+                        });
+                    } catch (Exception e) {}
+                }
+            }
+        }).start();
 
         dayPlus.setOnClickListener(new View.OnClickListener() {
             @Override
