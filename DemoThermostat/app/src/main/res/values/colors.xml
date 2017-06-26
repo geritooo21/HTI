@@ -6,15 +6,22 @@
 
     //This is where custom colors start:
 
+    //"darkDefault" #0D4D4D
+    //"lightDefault" #407F7F
+    //"toolbarDefault" #226666
+
+    //"darkNeon" #FF6EC7
+    //"lightNeon" #67C8FF
+    //"toolbarNeon" #83F52C
     <color name="dark">#0D4D4D</color>
     <color name="light">#407F7F</color>
-    <color name="white">#F3F3F3</color>
+    <color name="toolbar">#226666</color>
 
     <color name="darkSecret">#550000</color>
     <color name="lightSecret">#AA3939</color>
     <color name="toolbarSecret">#801515</color>
 
-    <color name="toolbar">#226666</color>
     <color name="sun">#D4A66A</color>
     <color name="moon">#336699</color>
+    <color name="white">#F3F3F3</color>
 </resources>

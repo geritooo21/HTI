@@ -4,12 +4,12 @@
         "source": "C:\\Users\\s168239\\.android\\build-cache\\a51330cb48925fb97599313b01ad2efd9f08ee40\\output\\res\\layout\\design_navigation_menu.xml"
     },
     {
-        "merged": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_bottom_navigation_item.xml",
-        "source": "C:\\Users\\s168239\\.android\\build-cache\\a51330cb48925fb97599313b01ad2efd9f08ee40\\output\\res\\layout\\design_bottom_navigation_item.xml"
-    },
-    {
         "merged": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_subheader.xml",
         "source": "C:\\Users\\s168239\\.android\\build-cache\\a51330cb48925fb97599313b01ad2efd9f08ee40\\output\\res\\layout\\design_navigation_item_subheader.xml"
+    },
+    {
+        "merged": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_bottom_navigation_item.xml",
+        "source": "C:\\Users\\s168239\\.android\\build-cache\\a51330cb48925fb97599313b01ad2efd9f08ee40\\output\\res\\layout\\design_bottom_navigation_item.xml"
     },
     {
         "merged": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
@@ -40,12 +40,12 @@
         "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
     },
     {
-        "merged": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
-        "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\layout\\abc_screen_toolbar.xml"
-    },
-    {
         "merged": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_singlechoice_material.xml",
         "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\layout\\select_dialog_singlechoice_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
+        "source": "C:\\Users\\s168239\\.android\\build-cache\\0ea04cb5e04e8c6c9f4324a2af846720add5a0c2\\output\\res\\layout\\abc_screen_toolbar.xml"
     },
     {
         "merged": "C:\\Users\\s168239\\Documents\\GitHub\\HTI\\DemoThermostat\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
